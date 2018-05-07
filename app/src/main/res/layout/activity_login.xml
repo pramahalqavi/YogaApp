@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/label_buat_akun"
-        android:background="@color/authorizationButtonBg"
+        android:backgroundTint="@color/authorizationButtonBg"
         android:text="masuk"
         android:textColor="#FFF"
         android:onClick="masukButtonOnClick"/>
