@@ -1,7 +1,9 @@
 package com.android.paskahlis.yogaapp.authorization;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.paskahlis.yogaapp.R;
 import com.daimajia.androidanimations.library.Techniques;
@@ -16,7 +18,18 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         YoYo.with(Techniques.Tada)
-                .duration(1400)
+                .duration(700)
                 .playOn(findViewById(R.id.daun_top));
+        YoYo.with(Techniques.Tada)
+                .duration(700)
+                .playOn(findViewById(R.id.daun_bottom));
+    }
+
+    public void registerLabelOnClick(View view) {
+
+    }
+
+    public void masukButtonOnClick(View view) {
+        startActivity(new Intent(this, AuthenticationActivity.class));
     }
 }

@@ -21,6 +21,7 @@
             android:src="@drawable/daun2" />
 
         <ImageView
+            android:id="@+id/daun_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -50,9 +51,11 @@
         android:layout_above="@+id/label_buat_akun"
         android:background="@color/authorizationButtonBg"
         android:text="masuk"
-        android:textColor="#FFF" />
+        android:textColor="#FFF"
+        android:onClick="masukButtonOnClick"/>
 
     <TextView
+        android:onClick="registerLabelOnClick"
         android:id="@+id/label_buat_akun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
