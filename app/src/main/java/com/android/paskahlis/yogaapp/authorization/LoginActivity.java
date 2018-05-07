@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void registerLabelOnClick(View view) {
-
+        startActivity(new Intent(this, RegistrationActivity.class));
     }
 
     public void masukButtonOnClick(View view) {

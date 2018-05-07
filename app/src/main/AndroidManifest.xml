@@ -21,8 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".authorization.AuthenticationActivity"
-            android:parentActivityName=".authorization.AuthenticationActivity"/>
+        <activity
+            android:name=".authorization.AuthenticationActivity"
+            android:parentActivityName=".authorization.AuthenticationActivity" />
+        <activity android:name=".authorization.RegistrationActivity" />
     </application>
 
 </manifest>
