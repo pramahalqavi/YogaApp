@@ -50,12 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/label_buat_akun"
         android:backgroundTint="@color/authorizationButtonBg"
+        android:onClick="masukButtonOnClick"
         android:text="masuk"
-        android:textColor="#FFF"
-        android:onClick="masukButtonOnClick"/>
+        android:textColor="#FFF" />
 
     <TextView
-        android:onClick="registerLabelOnClick"
         android:id="@+id/label_buat_akun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,6 +62,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="110dp"
         android:layout_marginTop="10dp"
-        android:text="Tidak punya akun? Buat akun." />
+        android:onClick="registerLabelOnClick"
+        android:text="Tidak punya akun? Buat akun."
+        android:textColor="@color/darkText" />
 
 </RelativeLayout>

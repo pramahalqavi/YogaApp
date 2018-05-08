@@ -7,17 +7,30 @@
     android:background="@drawable/background_authorization"
     tools:context=".authorization.RegistrationActivity">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="80dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tulang2" />
+    </RelativeLayout>
+
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
         android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/authorizationButtonBg"
+            android:drawableLeft="@drawable/ic_facebook"
             android:text="Sign up with Facebook"
             android:textColor="#fff" />
 
@@ -25,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/authorizationButtonBg"
+            android:drawableLeft="@drawable/ic_google_plus"
             android:text="Sign up with Google"
             android:textColor="#fff" />
 
@@ -32,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/authorizationButtonBg"
+            android:drawableLeft="@drawable/ic_email"
             android:text="Sign up with Email"
             android:textColor="#fff" />
 
