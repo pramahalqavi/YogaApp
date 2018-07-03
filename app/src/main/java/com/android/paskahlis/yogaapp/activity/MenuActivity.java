@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp;
+package com.android.paskahlis.yogaapp.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
@@ -7,6 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
+import com.android.paskahlis.yogaapp.fragment.ContactsFragment;
+import com.android.paskahlis.yogaapp.fragment.HistoryFragment;
+import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -15,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
+        BottomNavigationViewHelper.removeShiftMode(bottomNav);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new ArticlesFragment()).commit();
         bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
