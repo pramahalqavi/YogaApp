@@ -7,15 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.android.paskahlis.yogaapp.activity.MenuActivity">
 
-    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/chtl_toolbar"
-        app:title="aaaaaaa"
-        android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize">
-
-    </android.support.v7.widget.Toolbar>
-
     <FrameLayout
         android:id="@+id/fragment"
         android:layout_width="match_parent"
