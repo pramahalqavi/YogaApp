@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">YogaApp</string>
+    <string name="contacts_content_hint">Masukkan pertanyaan dan saran</string>
+    <string name="contacts_send_button">KIRIM</string>
+    <string name="contacts_email_hint">Alamat email</string>
+    <string name="contacts_name_hint">Nama anda</string>
 </resources>

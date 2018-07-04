@@ -7,11 +7,20 @@
     android:layout_height="match_parent"
     tools:context="com.android.paskahlis.yogaapp.activity.MenuActivity">
 
+    <RelativeLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary">
+
+    </RelativeLayout>
+
     <FrameLayout
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/navigation"
+        android:layout_below="@id/action_bar"
         android:layout_margin="4dp"/>
 
     <android.support.design.widget.BottomNavigationView
