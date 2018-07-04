@@ -46,12 +46,13 @@
 
     <Button
         android:id="@+id/button_masuk"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/label_buat_akun"
-        android:backgroundTint="@color/authorizationButtonBg"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_edge_curved"
         android:onClick="masukButtonOnClick"
-        android:text="masuk"
+        android:text="MASUK"
         android:textColor="#FFF" />
 
     <TextView
@@ -64,6 +65,6 @@
         android:layout_marginTop="10dp"
         android:onClick="registerLabelOnClick"
         android:text="Tidak punya akun? Buat akun."
-        android:textColor="@color/darkText" />
+        android:textColor="#FFF" />
 
 </RelativeLayout>
