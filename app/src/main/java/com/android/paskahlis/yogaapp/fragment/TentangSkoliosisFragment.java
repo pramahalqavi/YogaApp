@@ -1,8 +1,10 @@
 package com.android.paskahlis.yogaapp.fragment;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,20 +15,17 @@ import android.widget.ImageView;
 
 import com.android.paskahlis.yogaapp.R;
 
-/**
- * Created by Prama LH on 07-May-18.
- */
+public class TentangSkoliosisFragment extends Fragment {
 
-public class ArticlesFragment extends Fragment {
     ImageView mImageView;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        ImageView imageView = (ImageView) getView().findViewById(R.id.header_image);
-//
-//        Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.feminim);
-//        Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, 150, 100, true);
-//        imageView.setImageBitmap(bMapScaled);
+        ImageView imageView = (ImageView) getView().findViewById(R.id.header_image);
+
+        Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.feminim);
+        Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, 150, 100, true);
+        imageView.setImageBitmap(bMapScaled);
 
 //        BitmapFactory.Options options = new BitmapFactory.Options();
 //        options.inJustDecodeBounds = true;
@@ -40,7 +39,7 @@ public class ArticlesFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_articles, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tentang_skoliosis, container, false);
         return rootView;
     }
 

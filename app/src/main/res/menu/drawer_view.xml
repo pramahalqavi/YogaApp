@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/tentang_skoliosis"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_tentang_skoliosis"
+            android:title="TENTANG SKOLIOSIS" />
+        <item
+            android:id="@+id/nav_penyebab_skoliosis"
+            android:title="PENYEBAB SKOLIOSIS" />
+        <item
+            android:id="@+id/nav_resiko_skoliosis"
+            android:title="RESIKO SKOLIOSIS" />
+    </group>
+        <item
+            android:id="@+id/nav_fakta"
+            android:title="FAKTA-FAKTA" />
+    <group android:id="@+id/tentang_yoga"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_tentang_yoga"
+            android:title="TENTANG YOGA" />
+        <item
+            android:id="@+id/nav_asal_usul"
+            android:title="ASAL-USUL" />
+    </group>
+        <item
+            android:id="@+id/nav_yoga_bagi"
+            android:title="YOGA BAGI SKOLIOSIS" />
+        <item
+            android:id="@+id/nav_tips"
+            android:title="TIPS" />
+        <item
+            android:id="@+id/nav_nutrisi"
+            android:title="NUTRISI" />
+
+</menu>
