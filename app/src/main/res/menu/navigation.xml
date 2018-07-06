@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_article"
+        android:icon="@mipmap/ic_format_list_bulleted_white_24dp"
+        android:title="Article"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:title="History"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/ic_contact_mail_white_24dp"
+        android:title="Contact"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/navigation_exit"
+        android:icon="@drawable/ic_clear_white_24dp"
+        android:title="Exit"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>

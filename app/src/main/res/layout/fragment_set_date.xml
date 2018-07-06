@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_below="@id/header_calendar"></CalendarView>
+
+    <Button
+        android:id="@+id/button_set_schedule"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/calendar"
+        android:background="@drawable/button_round"
+        android:text="@string/button_atur_jadwal"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

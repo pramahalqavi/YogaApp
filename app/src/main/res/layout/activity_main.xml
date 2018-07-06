@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_authorization"
-    tools:context="com.android.paskahlis.yogaapp.MainActivity">
+    tools:context="com.android.paskahlis.yogaapp.activity.MainActivity">
 
     <ImageView
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:src="@drawable/mascot_loader" />
 
 </RelativeLayout>
