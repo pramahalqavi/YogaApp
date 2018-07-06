@@ -7,42 +7,13 @@
     android:background="@drawable/background_authorization"
     tools:context=".authorization.LoginActivity">
 
-    <RelativeLayout
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/daun_top"
+        android:paddingBottom="85dp"
         android:layout_centerInParent="true"
-        android:paddingBottom="100dp">
-
-        <ImageView
-            android:id="@+id/daun_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="52dp"
-            android:src="@drawable/daun2" />
-
-        <ImageView
-            android:id="@+id/daun_bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/daun" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:paddingTop="23dp"
-            android:src="@drawable/tulang" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="55dp"
-            android:src="@drawable/bunga" />
-
-    </RelativeLayout>
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mascot_login" />
 
     <Button
         android:id="@+id/button_masuk"
@@ -62,8 +33,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="110dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:onClick="registerLabelOnClick"
+        android:padding="10dp"
         android:text="Tidak punya akun? Buat akun."
         android:textColor="#FFF" />
 

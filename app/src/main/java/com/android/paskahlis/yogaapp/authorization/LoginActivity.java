@@ -16,13 +16,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
-
-        YoYo.with(Techniques.Tada)
-                .duration(700)
-                .playOn(findViewById(R.id.daun_top));
-        YoYo.with(Techniques.Tada)
-                .duration(700)
-                .playOn(findViewById(R.id.daun_bottom));
     }
 
     public void registerLabelOnClick(View view) {
