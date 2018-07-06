@@ -64,7 +64,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_edge_curved"
-            android:foreground="?android:attr/selectableItemBackground"
             android:text="DAFTAR"
             android:textColor="#fff" />
 
