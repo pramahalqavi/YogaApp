@@ -10,43 +10,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:paddingTop="60dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="80dp"
             android:text="DAFTAR"
             android:textColor="#2f8f86"
             android:textSize="18pt" />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Name"
             android:textColor="#18b792"
             android:textColorHint="#18b792" />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Email"
             android:textColor="#18b792"
             android:textColorHint="#18b792" />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Password"
             android:textColor="#18b792"
@@ -63,4 +69,15 @@
 
     </LinearLayout>
 
+    <ImageButton
+        
+        android:id="@+id/button_exit_pendaftaran"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/ic_cancel"
+        android:onClick="exitPendaftaranButtonOnClick"/>
 </RelativeLayout>
