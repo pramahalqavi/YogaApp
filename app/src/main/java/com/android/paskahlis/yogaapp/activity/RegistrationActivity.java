@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.authorization;
+package com.android.paskahlis.yogaapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        getSupportActionBar().hide();
     }
 
     public void exitPendaftaranButtonOnClick(View view) {

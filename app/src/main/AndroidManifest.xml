@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_main"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -19,11 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".authorization.LoginActivity" />
-        <activity
-            android:name=".authorization.AuthenticationActivity"
-            android:parentActivityName=".authorization.AuthenticationActivity" />
-        <activity android:name=".authorization.RegistrationActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
         <activity android:name=".activity.SetDateActivity"></activity>
     </application>
 
