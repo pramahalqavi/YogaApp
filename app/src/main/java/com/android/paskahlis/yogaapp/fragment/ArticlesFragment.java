@@ -4,81 +4,95 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 
 /**
  * Created by Prama LH on 07-May-18.
  */
 
 public class ArticlesFragment extends Fragment {
-    ImageView mImageView;
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        ImageView imageView = (ImageView) getView().findViewById(R.id.header_image);
-//
-//        Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.feminim);
-//        Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, 150, 100, true);
-//        imageView.setImageBitmap(bMapScaled);
-
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        options.inJustDecodeBounds = true;
-//        BitmapFactory.decodeResource(getResources(), R.id.header_image, options);
-//        int imageHeight = options.outHeight;
-//        int imageWidth = options.outWidth;
-//        String imageType = options.outMimeType;
-//        mImageView.setImageBitmap(
-//                decodeSampledBitmapFromResource(getResources(), R.id.header_image, 100, 100));
-    }
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_articles, container, false);
+
+        final MenuActivity activity = (MenuActivity) getActivity();
+        activity.navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        menuItem.setChecked(true);
+                        activity.mDrawerLayout.closeDrawers();
+                        ScrollView scrollView;
+                        TextView textView;
+
+                        switch (menuItem.getItemId()) {
+                            case R.id.nav_tentang_skoliosis:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_tentang_skoliosis);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_penyebab_skoliosis:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_penyebab_skoliosis);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_resiko_skoliosis:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_resiko_skoliosis);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_fakta:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_fakta);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_tentang_yoga:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_tentang_yoga);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_asal_usul:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_asal_usul);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_yoga_bagi:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_yoga_bagi);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_tips:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_tips);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                            case R.id.nav_nutrisi:
+                                scrollView = (ScrollView) getView().findViewById(R.id.article_scrollview);
+                                textView = getView().findViewById(R.id.title_nutrisi);
+                                scrollView.smoothScrollTo(0, Math.round(textView.getY()));
+                                break;
+                        }
+                        return true;
+                    }
+                });
         return rootView;
     }
 
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
 
-        if (height > reqHeight || width > reqWidth) {
-
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) >= reqHeight
-                    && (halfWidth / inSampleSize) >= reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-        return inSampleSize;
-    }
-
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
-
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
-    }
 }

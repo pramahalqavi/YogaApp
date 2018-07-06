@@ -1,5 +1,6 @@
 package com.android.paskahlis.yogaapp.activity;
 
+import android.database.Observable;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
@@ -25,13 +26,15 @@ import com.android.paskahlis.yogaapp.fragment.TentangSkoliosisFragment;
 import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 
 public class MenuActivity extends AppCompatActivity {
-
-    private DrawerLayout mDrawerLayout;
+    public DrawerLayout mDrawerLayout;
+    public NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final ImageView drawerButton = findViewById(R.id.drawer_button);
 
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
         BottomNavigationViewHelper.removeShiftMode(bottomNav);
@@ -43,12 +46,18 @@ public class MenuActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_article:
                         selectedfragment = new ArticlesFragment();
+                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                        drawerButton.setVisibility(View.VISIBLE);
                         break;
                     case R.id.navigation_history:
                         selectedfragment = new HistoryFragment();
+                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                        drawerButton.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.navigation_contact:
                         selectedfragment = new ContactsFragment();
+                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                        drawerButton.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.navigation_exit:
                         finish();
@@ -60,65 +69,14 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ImageView drawerButton = findViewById(R.id.drawer_button);
-
+        navigationView = findViewById(R.id.nav_view);
         drawerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawerLayout.openDrawer(Gravity.START);
             }
         });
-
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
-                        menuItem.setChecked(true);
-                        // close drawer when item is tapped
-                        mDrawerLayout.closeDrawers();
-
-                        Fragment selectedfragment = null;
-                        switch (menuItem.getItemId()) {
-                            case R.id.nav_tentang_skoliosis:
-//                                ScrollView scrollView = (ScrollView) findViewById(R.id.title_tentang_skoliosis);
-//                                scrollView.smoothScrollTo(0, 500);
-                                break;
-                            case R.id.nav_penyebab_skoliosis:
-
-                                break;
-                            case R.id.nav_resiko_skoliosis:
-
-                                break;
-//                            case R.id.nav_fakta:
-//
-//                                break;
-//                            case R.id.nav_tentang_yoga:
-//
-//                                break;
-//                            case R.id.nav_asal_usul:
-//
-//                                break;
-//                            case R.id.nav_yoga_bagi:
-//
-//                                break;
-//                            case R.id.nav_tips:
-//
-//                                break;
-//                            case R.id.nav_nutrisi:
-//
-//                                break;
-                        }
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, selectedfragment).commit();
-
-
-                        return true;
-                    }
-                });
     }
-
     @Override
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
@@ -126,4 +84,5 @@ public class MenuActivity extends AppCompatActivity {
             return;
         }
     }
+
 }
