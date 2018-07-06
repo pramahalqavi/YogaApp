@@ -42,7 +42,7 @@
         <Button
             android:id="@+id/button_send"
             android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:layout_below="@id/contacts_name"
             android:background="@drawable/button_round"
             android:layout_marginTop="120dp"

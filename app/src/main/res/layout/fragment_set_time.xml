@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TimePicker android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:background="@color/light_grey"
+        android:color="@color/skyblue">
+
+    </TimePicker>
+
+        <TextView android:id="@+id/date_info"
+            android:layout_below="@id/timepicker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="tgl"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView android:id="@+id/time_info"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="jam"
+            android:layout_toRightOf="@id/date_info"
+            android:layout_below="@id/timepicker"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"/>
+    <View android:id="@+id/date_underline"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/date_info"
+        android:background="@color/light_grey"
+        android:layout_marginTop="2dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/date_underline"
+        android:background="@drawable/button_round"
+        android:layout_marginTop="50dp"
+        android:text="@string/button_start"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
