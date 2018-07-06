@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.authorization;
+package com.android.paskahlis.yogaapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

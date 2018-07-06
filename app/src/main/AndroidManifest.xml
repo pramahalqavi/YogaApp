@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".authorization.LoginActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".authorization.AuthenticationActivity"
-            android:parentActivityName=".authorization.AuthenticationActivity" />
-        <activity android:name=".authorization.RegistrationActivity" />
+            android:name=".activity.AuthenticationActivity"
+            android:parentActivityName=".activity.AuthenticationActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
         <activity android:name=".activity.SetDateActivity"></activity>
     </application>
 

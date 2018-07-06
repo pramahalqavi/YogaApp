@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.authorization;
+package com.android.paskahlis.yogaapp.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.paskahlis.yogaapp.R;
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 
 public class LoginActivity extends AppCompatActivity {
 
