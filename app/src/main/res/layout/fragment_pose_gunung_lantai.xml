@@ -29,16 +29,26 @@
         android:src="@drawable/pose_gunung_lantai" />
 
     <ScrollView
+        android:id="@+id/step_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/step_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingExtra="2pt"
-            android:padding="16dp"
-            android:text="@string/pose_gunung_text" />
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tutorial_step_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2pt"
+                android:layout_marginBottom="10dp"
+                android:text="Langkah-langkah:" />
+        </LinearLayout>
     </ScrollView>
 
     <LinearLayout

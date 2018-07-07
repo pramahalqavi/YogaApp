@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="2pt"
             android:padding="16dp"
-            android:text="@string/pose_gunung_text" />
+            android:text="@string/steps_label" />
     </ScrollView>
 
     <LinearLayout

@@ -222,13 +222,101 @@ bantu melawan artritis dan nyeri sendi.</string>
     <string name="button_start">MULAI</string>
 
     <!-- pose gunung di lantai -->
-    <string name="pose_gunung_text">
-        Langkah-langkah:\n
-        1. Berdirilah pada posisi tegak dengan kedua posisi kaki sejajar namun tidak bersentuhan satu kaki dengan kaki lainnya.\n
-        2. Tekan seluruh jari kaki anda pada tikar dan rasakan bagaimana berat tubuh anda tersalurkan pada kaki.\n
-        3. Kencangkan otot paha anda.\n
-        4. Perbesar volume pada tulang rusuk anda dengan menarik nafas perlahan sambil memposisikan kedua bahu kebelakang.\n
-        5. Arahkan mata anda lurus kedepan.\n
-        6.Tarik dan hembuskan nafas perlahan selama 10-15 kali dalam posisi ini.\n
-    </string>
+    <string name="steps_label">Langkah-langkah:</string>
+    <string-array name="pose_gunung_lantai">
+        <item>Berdirilah pada posisi tegak dengan kedua posisi kaki sejajar namun tidak bersentuhan satu kaki dengan kaki lainnya</item>
+        <item>Tekan seluruh jari kaki anda pada tikar dan rasakan bagaimana berat tubuh anda tersalurkan pada kaki.</item>
+        <item>Kencangkan otot paha anda.</item>
+        <item>Perbesar volume pada tulang rusuk anda dengan menarik nafas perlahan sambil memposisikan kedua bahu kebelakang.</item>
+        <item>Arahkan mata anda lurus kedepan.</item>
+        <item>Tarik dan hembuskan nafas perlahan selama 10&#8211;15 kali dalam posisi ini.</item>
+    </string-array>
+
+    <string-array name="pose_gunung_terlentang">
+        <item>Berbaringlah dengan punggung rata dengan tikar, tempelkan telapak kaki pada tembok.</item>
+        <item>Rentangkan lebar-lebar lengan anda dengan kedua kaki lurus dan dirapat-kan pada tikar.</item>
+        <item>Tariklah kedua paha dalam anda menuju pinggul dengan menggunakan tangan, kemudian stabilkan perut anda.</item>
+        <item>Hembuskan nafas dalam-dalam dan rentangkan kembali kedua kaki.</item>
+        <item>Buka lebar kedua kaki membentuk huruf ‘v’ dan posisikan tangan anda lurus kedua sisi, dengan telapak tangan menghadap ke atas</item>
+        <item>Tekan kedua kaki pada tembok dengan kencang dan juga tekan kedua paha anda kesisi bawah</item>
+        <item>Sementara pinggul bagian luar akan terarah masuk, tulang ekor akan turun dan tulang kemaluan sebaliknya</item>
+        <item>Posisikan kedua bahu kebelakang</item>
+        <item>Rentangkan kedua tangan keluar, kempiskan perut</item>
+        <item>Perlahan kembalikan perut kekondisi semula dan lakukan pose gunung dilantai</item>
+    </string-array>
+
+    <string-array name="pose_pohon_terlentang">
+        <item>Pada posisi berbaring, jinjitlah kaki kiri anda dengan kaki kanan diluruskan seperti biasa</item>
+        <item>Angkat dan tekuk kaki kiri keluar dengan tumit kaki kiri hampir menyentuk perut menggunakan kedua tangan</item>
+        <item>Rotasikan kaki kiri keluar dengan tumit kaki kiri menempel rata pada bagian dalam paha kaki kanan</item>
+        <item>Angkat dan tempelkan kedua tangan kira-kira sejajar dengan tinggi dada membentuk pose berdoa</item>
+        <item>Tahan posisi ini, pandangan lurus kedepan, ambil dan hembuskan nafas dalam-dalam sebanyak tiga kali</item>
+        <item>Ulangi langkah-langkah diatas dengan kaki yang lain</item>
+    </string-array>
+
+    <string-array name="pose_kursi_terlentang">
+        <item>Berbaringlah lurus diatas matras seperti pose gunung dilantai</item>
+        <item>Lipat kain untuk dijadikan bantalan bagi pinggung anda pada bagian yang menonjol untuk menyokong posisi tulang belakang</item>
+        <item>Tekuk kedua kaki hingga alas kaki hampir menyentuh bokong. Kedua sisi lutut saling bersentuhan</item>
+        <item>Letakkan satu balok dilantai, disisi atas kepala anda berada. Letakkan kedua tangan lurus pada sisi kiri dan kanan balok</item>
+        <item>Dengan demikian, bahu akan memutar kebelakang dan tulang belakang akan memanjang</item>
+        <item>Tegangkan sedikit tulang rusuk anda sambil mengangkat dada</item>
+    </string-array>
+
+    <string-array name="pose_wajah_terlungkup">
+        <item>Tumpukan kedua lutut pada matras dengan telapak tangan didepan untuk menahan tubuh</item>
+        <item>Miringkan kedua betis kearah luar, lalu duduklah dengan posisi bokong diantara kedua betis tersebut</item>
+        <item>Angkat lebar kedua tangan keatas. Tarik tangan kearah atas demikian tubuh akan memanjang</item>
+        <item>Posisikan kedua tangan yang terangkat tadi lurus kedepan anda hingga mneyentuh lantai</item>
+        <item>Angkat kepala anda sambil menarik nafas, lalu hembuskan sambil menekuk masuk kepala kebawah</item>
+        <item>Tarik dan hembuskan nafas beberapa kali pada posisi ini</item>
+    </string-array>
+
+    <string-array name="pose_bentangan_tangan_kaki">
+        <item>Bentangkan kedua kaki anda lebar dengan posisi tangan terbentang lurus kedua sisi kanan dan sisi kiri</item>
+        <item>Kencangkan lutut dan otot paha anda</item>
+        <item>Salurkan berat tubuh anda pada tumit kaki</item>
+        <item>Tegakkan tulang dada anda kedepan</item>
+        <item>Tarik kedua jari lengan anda untuk saling menjauh</item>
+        <item>Pertahankan posisi ini, kemudian tarik dan hembuskan nafas sebanyak 10-15 kali</item>
+    </string-array>
+
+    <string-array name="pose_segitiga_memutar">
+        <item>Dalam posisi berdiri, angkat kaki kanan kedepan dan putar tubuh anda 180derajat ke belakang. Letakkan kaku kanan sehingga sekarang kaki kanan berada didepan anda</item>
+        <item>Tekan jari kaki anda pada lantai dengan otot paha dikencangkan</item>
+        <item>Bungkukkan tubuh kedepan dengan kedua tangan pada lantai sebagai penopang</item>
+        <item>Angkat dada anda dan rasakan tubuh tertarik memanjang</item>
+        <item>Letakkan tangan kiri anda kesisi luar kaki kanan</item>
+        <item>Dengan kaki kanan dan tangan kiri anda sebagai fondasinya, angkat tangan kanan keatas diikuti dengan putaran tubuh anda seperti pada gambar</item>
+        <item>Kempiskan perut anda pada posisi ini</item>
+        <item>Tetaplah diposisi ini selama beberapa detik dan ulangi langkah-langkah diatas dengan kaki kiri</item>
+    </string-array>
+
+    <string-array name="pose_wajah_anjing_terlungkup">
+        <item>Pada matras yoga, telungkupkan badan dengan wajah menghadap kebawah</item>
+        <item>Letakkan kedua tangan sejajar pada sisi kiri dan kanan dada anda</item>
+        <item>Angkat tubuh anda keatas menggunakan kedua tangan membentuk postur seperti meja. Letak lutut dan tumit tetap</item>
+        <item>Selanjutnya, tekuk masuk tumit anda sehingga tumpuan kaki beralih pada jari</item>
+        <item>Angkat panggul anda tinggi-tinggi dengan meluruskan kedua kaki sehingga sekarang anda akan membentuk huruf ‘v’ terbalik</item>
+        <item>Regangkan tubuh anda dan ratakan tumit anda pada matras untuk menyempurnakan pose</item>
+        <item>Fokuskan perhatian dengan menyakurkan tekanan pada kesepuluh jari tangan anda</item>
+        <item>Usahakanlah untuk meregangkan tulang belikat dan bernafaslah dalam-dalam secara perlahan sebanyak kurang lebih 15 kali</item>
+    </string-array>
+
+    <string-array name="pose_tongkat">
+        <item>Mulailah dengan posisi duduk dengan tubuh tegak dan kaki lurus</item>
+        <item>Tekan telapak tangan anda kebawah pada sebelah kiri dan kanan panggul</item>
+        <item>Putar bahu kebelakang menjauhi telinga</item>
+        <item>Rasakan bagaimana tulang ekor anda bertumpu pada lantai</item>
+        <item>Regangkan tulang belakang anda dengan dagu sedikit dinaikkan</item>
+        <item>Pertahankanlah posisi ini selama sekitar 1 menit</item>
+    </string-array>
+
+    <string-array name="pose_duduk_condong_depan">
+        <item>Duduk tegak dengan kedua kaki lurus dan terbuka lebar-lebar</item>
+        <item>Tarik nafas dan angkat kedua tangan lurus keatas</item>
+        <item>Turunkan tangan kedepan diikuti dengan membungkukkan tubuh dan usahakanlah untuk menyentuh masing-masing ujung jari kaki kiri dan kanan anda</item>
+        <item>Tetaplah berada diposisi ini selama 10 hingga 60 detik</item>
+        <item>Hembuskan nafas, angkat tangan anda kembali ke posisi semula</item>
+    </string-array>
 </resources>
