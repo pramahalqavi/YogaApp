@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.android.paskahlis.yogaapp.fragment.training.PoseBentanganTanganKakiFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseGunungLantaiFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseGunungTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseKursiTerlentangFragment;
@@ -50,6 +51,10 @@ public class TrainingFragment extends Fragment {
                     case 4:
                         fragment = new PoseWajahTerlungkupFragment();
                         break;
+                    case 5:
+                        fragment = new PoseBentanganTanganKakiFragment();
+                        break;
+
                 }
                 if (fragment != null)
                     activity.replaceFragment(fragment, false);
