@@ -11,11 +11,14 @@ import android.widget.ListView;
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
 import com.android.paskahlis.yogaapp.fragment.training.PoseBentanganTanganKakiFragment;
+import com.android.paskahlis.yogaapp.fragment.training.PoseDudukCondongDepanFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseGunungLantaiFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseGunungTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseKursiTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PosePohonTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseSegitigaMemutarFragment;
+import com.android.paskahlis.yogaapp.fragment.training.PoseTongkatFragment;
+import com.android.paskahlis.yogaapp.fragment.training.PoseWajahAnjingTerlungkupFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseWajahTerlungkupFragment;
 import com.android.paskahlis.yogaapp.utility.TrainingModeListAdapter;
 
@@ -57,6 +60,15 @@ public class TrainingFragment extends Fragment {
                         break;
                     case 6:
                         fragment = new PoseSegitigaMemutarFragment();
+                        break;
+                    case 7:
+                        fragment = new PoseWajahAnjingTerlungkupFragment();
+                        break;
+                    case 8:
+                        fragment = new PoseTongkatFragment();
+                        break;
+                    case 9:
+                        fragment = new PoseDudukCondongDepanFragment();
                         break;
 
                 }
