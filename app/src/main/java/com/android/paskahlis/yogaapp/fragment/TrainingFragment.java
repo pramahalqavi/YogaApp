@@ -15,6 +15,7 @@ import com.android.paskahlis.yogaapp.fragment.training.PoseGunungLantaiFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseGunungTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseKursiTerlentangFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PosePohonTerlentangFragment;
+import com.android.paskahlis.yogaapp.fragment.training.PoseSegitigaMemutarFragment;
 import com.android.paskahlis.yogaapp.fragment.training.PoseWajahTerlungkupFragment;
 import com.android.paskahlis.yogaapp.utility.TrainingModeListAdapter;
 
@@ -53,6 +54,9 @@ public class TrainingFragment extends Fragment {
                         break;
                     case 5:
                         fragment = new PoseBentanganTanganKakiFragment();
+                        break;
+                    case 6:
+                        fragment = new PoseSegitigaMemutarFragment();
                         break;
 
                 }
