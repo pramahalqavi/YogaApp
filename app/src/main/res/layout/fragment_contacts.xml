@@ -1,54 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/contacts_content"
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:targetApi="lollipop">
+
+    </Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:hint="@string/contacts_content_hint"
-            android:textSize="12sp"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@android:color/darker_gray" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/contacts_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:hint="@string/contacts_email_hint"
-            android:textSize="12sp"
-            android:layout_marginVertical="10dp"
-            android:layout_below="@id/contacts_content"
-            android:backgroundTint="@android:color/darker_gray"/>
+            <EditText
+                android:id="@+id/contacts_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="60dp"
+                android:backgroundTint="@android:color/darker_gray"
+                android:hint="@string/contacts_content_hint"
+                android:textSize="12sp" />
 
-        <EditText
-            android:id="@+id/contacts_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:hint="@string/contacts_name_hint"
-            android:textSize="12sp"
-            android:layout_marginVertical="10dp"
-            android:layout_below="@id/contacts_email"
-            android:backgroundTint="@android:color/darker_gray"/>
+            <EditText
+                android:id="@+id/contacts_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contacts_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@android:color/darker_gray"
+                android:hint="@string/contacts_email_hint"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/button_send"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/contacts_name"
-            android:background="@drawable/button_round"
-            android:layout_marginTop="120dp"
-            android:text="@string/contacts_send_button"
-            android:textColor="@android:color/white"
-            android:layout_centerHorizontal="true"/>
+            <EditText
+                android:id="@+id/contacts_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contacts_email"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@android:color/darker_gray"
+                android:hint="@string/contacts_name_hint"
+                android:textSize="12sp" />
 
-    </RelativeLayout>
-</ScrollView>
+            <Button
+                android:id="@+id/button_send"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/contacts_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/button_round"
+                android:text="@string/contacts_send_button"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
