@@ -1,20 +1,13 @@
 package com.android.paskahlis.yogaapp.fragment;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -30,6 +23,7 @@ public class ArticlesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_articles, container, false);
+        final ImageView drawerButton = (ImageView) rootView.findViewById(R.id.drawer_button);
 
         final MenuActivity activity = (MenuActivity) getActivity();
         activity.navigationView.setNavigationItemSelectedListener(
@@ -91,6 +85,13 @@ public class ArticlesFragment extends Fragment {
                         return true;
                     }
                 });
+
+        drawerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.mDrawerLayout.openDrawer(Gravity.START);
+            }
+        });
         return rootView;
     }
 

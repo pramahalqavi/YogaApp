@@ -1,225 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/article_scrollview"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_below="@id/action_bar">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/drawer_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_margin="12dp"
+            android:src="@drawable/baseline_dehaze_white_24dp" />
+    </Toolbar>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/article_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/action_bar">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/header_background"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@drawable/article_header">
 
-                <RelativeLayout
-                    android:id="@+id/header_background"
+                <ImageView
+                    android:id="@+id/header_image"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/article_header"
-                    android:layout_gravity="top">
-                    <ImageView
-                        android:id="@+id/header_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="240dp"
-                        android:src="@drawable/feminim1"/>
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/title_tentang_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/header_background"
-                    android:text="TENTANG SKOLIOSIS"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="25dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_tentang_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_tentang_skoliosis"
-                    android:textSize="14sp"
-                    android:text="@string/tentang_skoliosis"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_penyebab_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_tentang_skoliosis"
-                    android:text="PENYEBAB SKOLIOSIS"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_penyebab_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_penyebab_skoliosis"
-                    android:textSize="14sp"
-                    android:text="@string/penyebab_skoliosis"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_resiko_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_penyebab_skoliosis"
-                    android:text="RESIKO SKOLIOSIS"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_resiko_skoliosis"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_resiko_skoliosis"
-                    android:textSize="14sp"
-                    android:text="@string/tentang_skoliosis"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_fakta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_resiko_skoliosis"
-                    android:text="FAKTA-FAKTA"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_fakta"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_fakta"
-                    android:textSize="14sp"
-                    android:text="@string/fakta"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_tentang_yoga"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_fakta"
-                    android:text="TENTANG YOGA"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_tentang_yoga"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_tentang_yoga"
-                    android:textSize="14sp"
-                    android:text="@string/tentang_yoga"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_asal_usul"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_tentang_yoga"
-                    android:text="ASAL-USUL"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_asal_usul"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_asal_usul"
-                    android:textSize="14sp"
-                    android:text="@string/asal_usul"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_yoga_bagi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_asal_usul"
-                    android:text="YOGA BAGI SKOLIOSIS"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_yoga_bagi"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_yoga_bagi"
-                    android:textSize="14sp"
-                    android:text="@string/yoga_bagi"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_tips"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_yoga_bagi"
-                    android:text="TIPS"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_tips"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_tips"
-                    android:textSize="14sp"
-                    android:text="@string/tips"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
-                <TextView
-                    android:id="@+id/title_nutrisi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_tips"
-                    android:text="NUTRISI"
-                    android:textSize="22sp"
-                    android:gravity="left"
-                    android:layout_marginTop="50dp"
-                    android:textColor="@color/colorPrimaryDark"/>
-
-                <TextView
-                    android:id="@+id/text_nutrisi"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_below="@+id/title_nutrisi"
-                    android:textSize="14sp"
-                    android:text="@string/nutrisi"
-                    android:textColor="@color/colorPrimary"
-                    android:lineSpacingExtra="4dp"/>
-
+                    android:layout_height="240dp"
+                    android:src="@drawable/feminim1" />
             </RelativeLayout>
-</ScrollView>
 
+            <TextView
+                android:id="@+id/title_tentang_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header_background"
+                android:layout_marginTop="25dp"
+                android:gravity="left"
+                android:text="TENTANG SKOLIOSIS"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_tentang_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_tentang_skoliosis"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/tentang_skoliosis"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_penyebab_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_tentang_skoliosis"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="PENYEBAB SKOLIOSIS"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_penyebab_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_penyebab_skoliosis"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/penyebab_skoliosis"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_resiko_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_penyebab_skoliosis"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="RESIKO SKOLIOSIS"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_resiko_skoliosis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_resiko_skoliosis"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/tentang_skoliosis"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_fakta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_resiko_skoliosis"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="FAKTA-FAKTA"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_fakta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_fakta"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/fakta"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_tentang_yoga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_fakta"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="TENTANG YOGA"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_tentang_yoga"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_tentang_yoga"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/tentang_yoga"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_asal_usul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_tentang_yoga"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="ASAL-USUL"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_asal_usul"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_asal_usul"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/asal_usul"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_yoga_bagi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_asal_usul"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="YOGA BAGI SKOLIOSIS"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_yoga_bagi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_yoga_bagi"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/yoga_bagi"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_yoga_bagi"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="TIPS"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_tips"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_tips"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/tips"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/title_nutrisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_tips"
+                android:layout_marginTop="50dp"
+                android:gravity="left"
+                android:text="NUTRISI"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/text_nutrisi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_nutrisi"
+                android:layout_margin="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/nutrisi"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
 import com.android.paskahlis.yogaapp.fragment.ContactsFragment;
 import com.android.paskahlis.yogaapp.fragment.HistoryFragment;
+import com.android.paskahlis.yogaapp.fragment.TrainingFragment;
 import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 
 public class MenuActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        final ImageView drawerButton = findViewById(R.id.drawer_button);
+
 
         BottomNavigationView bottomNav = findViewById(R.id.navigation);
         BottomNavigationViewHelper.removeShiftMode(bottomNav);
@@ -40,17 +41,15 @@ public class MenuActivity extends AppCompatActivity {
                     case R.id.navigation_article:
                         selectedfragment = new ArticlesFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                        drawerButton.setVisibility(View.VISIBLE);
                         break;
                     case R.id.navigation_history:
-                        selectedfragment = new HistoryFragment();
+//                        selectedfragment = new HistoryFragment();
+                        selectedfragment = new TrainingFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                        drawerButton.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.navigation_contact:
                         selectedfragment = new ContactsFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                        drawerButton.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.navigation_exit:
                         finish();
@@ -63,12 +62,7 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         navigationView = findViewById(R.id.nav_view);
-        drawerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(Gravity.START);
-            }
-        });
+
     }
     @Override
     public void onBackPressed() {
