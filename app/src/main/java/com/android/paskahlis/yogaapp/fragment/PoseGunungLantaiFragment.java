@@ -14,6 +14,10 @@ public class PoseGunungLantaiFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_pose_gunung_lantai, container, false);
 
+
+
         return rootView;
     }
+
+    
 }
