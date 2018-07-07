@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp;
+package com.android.paskahlis.yogaapp.fragment;
 
 
 import android.app.Activity;
@@ -7,9 +7,11 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +19,15 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.AlarmReceiverActivity;
 import com.android.paskahlis.yogaapp.activity.SetDateActivity;
+import com.android.paskahlis.yogaapp.utility.AlarmReceiver;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class SetAlarmFragment extends Fragment {
 
@@ -31,7 +36,7 @@ public class SetAlarmFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         final SetDateActivity setDateActivity = (SetDateActivity) getActivity();
         setDateActivity.alarmButton.setVisibility(View.INVISIBLE);
-        final SharedPreferences pref = getContext().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
+        final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
 
         final TextView dateLabel = getView().findViewById(R.id.date_label);
         final TextView timeLabel = getView().findViewById(R.id.time_label);
@@ -39,10 +44,10 @@ public class SetAlarmFragment extends Fragment {
         final TextView timeAlarm = getView().findViewById(R.id.time_alarm);
 
         DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM");
-        dateAlarm.setText(dateFormat.format(getArguments().getLong("date")));
-        timeAlarm.setText(String.format("%02d.%02d", getArguments().getInt("hour"), getArguments().getInt("minute")));
+        dateAlarm.setText(dateFormat.format(pref.getLong("date", new Date().getTime())));
+        timeAlarm.setText(String.format("%02d.%02d", pref.getInt("hour", 0), pref.getInt("minute", 0)));
 
-        Switch sw = getView().findViewById(R.id.alarm_switch);
+        final Switch sw = getView().findViewById(R.id.alarm_switch);
         sw.setChecked(pref.getBoolean("alarm", false));
         if (sw.isChecked()) {
             dateLabel.setVisibility(View.VISIBLE);
@@ -63,26 +68,41 @@ public class SetAlarmFragment extends Fragment {
                     dateAlarm.setVisibility(View.VISIBLE);
                     timeLabel.setVisibility(View.VISIBLE);
                     timeAlarm.setVisibility(View.VISIBLE);
-                    Intent intent = new Intent(getActivity(), AlarmReceiverActivity.class);
-                    PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(),
-                            12345, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+                    Intent alarmIntent = new Intent(getActivity(), AlarmReceiver.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, 0);
+
                     Calendar cal = Calendar.getInstance();
-                    long ts = getArguments().getLong("date");
-                    ts += getArguments().getLong("hour") * 60 * 60 * 1000;
-                    ts += getArguments().getLong("minute") * 60 * 1000;
+                    long ts = pref.getLong("date", new Date().getTime());
+                    ts += pref.getInt("hour", 0) * 60 * 60 * 1000;
+                    ts += pref.getInt("minute", 0) * 60 * 1000;
                     cal.setTimeInMillis(ts);
-                    AlarmManager am = (AlarmManager)getActivity().getSystemService(Activity.ALARM_SERVICE);
-                    am.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),
-                            pendingIntent);
+//                    AlarmManager am = (AlarmManager)getActivity().getSystemService(Activity.ALARM_SERVICE);
+                    AlarmManager am = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                        am.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                    } else {
+                        am.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+                    }
                 } else {
                     dateLabel.setVisibility(View.INVISIBLE);
                     dateAlarm.setVisibility(View.INVISIBLE);
                     timeLabel.setVisibility(View.INVISIBLE);
                     timeAlarm.setVisibility(View.INVISIBLE);
                 }
-                pref.edit().putBoolean("alarm",isChecked);
+                pref.edit().putBoolean("alarm",isChecked).apply();
+                Log.d("tag", "turned to " + isChecked);
             }
         });
+
+        SharedPreferences.OnSharedPreferenceChangeListener spChanged = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if (key.equals("alarm") && sharedPreferences.getBoolean("alarm", false) == false)
+                    sw.setChecked(false);
+            }
+        };
+        pref.registerOnSharedPreferenceChangeListener(spChanged);
     }
 
     @Override

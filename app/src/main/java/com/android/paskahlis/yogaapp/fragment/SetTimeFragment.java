@@ -1,18 +1,18 @@
 package com.android.paskahlis.yogaapp.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.android.paskahlis.yogaapp.R;
-import com.android.paskahlis.yogaapp.SetAlarmFragment;
 import com.android.paskahlis.yogaapp.activity.SetDateActivity;
 
 import java.text.DateFormat;
@@ -27,7 +27,7 @@ public class SetTimeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TimePicker timePicker = (TimePicker) getView().findViewById(R.id.timepicker);
         timePicker.setIs24HourView(true);
-        final Bundle bundle = new Bundle();
+        final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
         final SetDateActivity setDateActivity = (SetDateActivity) getActivity();
         setDateActivity.alarmButton.setVisibility(View.VISIBLE);
 
@@ -36,19 +36,20 @@ public class SetTimeFragment extends Fragment {
         final TextView infoTime = getView().findViewById(R.id.time_info);
 
         DateFormat headerDateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
-        strDate.setText(headerDateFormat.format(getArguments().getLong("date")));
+        strDate.setText(headerDateFormat.format(pref.getLong("date", new Date().getTime())));
         DateFormat infoDateFormat = new SimpleDateFormat("EEE, dd MMM");
-        infoDate.setText(infoDateFormat.format(getArguments().getLong("date")));
+        infoDate.setText(infoDateFormat.format(pref.getLong("date", new Date().getTime())));
         infoTime.setText(String.format("%02d:%02d", timePicker.getCurrentHour(), timePicker.getCurrentMinute()));
 
-        bundle.putInt("hour", timePicker.getCurrentHour());
-        bundle.putInt("minute", timePicker.getCurrentMinute());
+        pref.edit().putInt("hour", timePicker.getCurrentHour()).apply();
+        pref.edit().putInt("minute", timePicker.getCurrentMinute()).apply();
         Calendar calendar = Calendar.getInstance();
-        bundle.putLong("date", getArguments().getLong("date"));
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 infoTime.setText(String.format("%02d:%02d", hourOfDay, minute));
+                pref.edit().putInt("hour", hourOfDay).apply();
+                pref.edit().putInt("minute", minute).apply();
             }
         });
 
@@ -57,7 +58,6 @@ public class SetTimeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment alarmFragment = new SetAlarmFragment();
-                alarmFragment.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
             }
         });
@@ -66,7 +66,6 @@ public class SetTimeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment alarmFragment = new SetAlarmFragment();
-                alarmFragment.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
             }
         });
