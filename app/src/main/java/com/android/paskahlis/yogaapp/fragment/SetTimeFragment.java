@@ -8,12 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.android.paskahlis.yogaapp.R;
-import com.android.paskahlis.yogaapp.activity.SetDateActivity;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,18 +24,24 @@ import java.util.Date;
 
 
 public class SetTimeFragment extends Fragment {
+    private MenuActivity activity;
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TimePicker timePicker = (TimePicker) getView().findViewById(R.id.timepicker);
+        activity = (MenuActivity) getActivity();
+        View rootView = getView();
+
+        TimePicker timePicker = (TimePicker) rootView.findViewById(R.id.timepicker);
         timePicker.setIs24HourView(true);
         final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
-        final SetDateActivity setDateActivity = (SetDateActivity) getActivity();
-        setDateActivity.alarmButton.setVisibility(View.VISIBLE);
 
-        final TextView strDate = getView().findViewById(R.id.text_date);
-        final TextView infoDate = getView().findViewById(R.id.date_info);
-        final TextView infoTime = getView().findViewById(R.id.time_info);
+        ImageView alarmButton = (ImageView) rootView.findViewById(R.id.alarm_button);
+
+        final TextView strDate = rootView.findViewById(R.id.text_date);
+        final TextView infoDate = rootView.findViewById(R.id.date_info);
+        final TextView infoTime = rootView.findViewById(R.id.time_info);
+        final Button startButton = rootView.findViewById(R.id.button_start);
 
         DateFormat headerDateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
         strDate.setText(headerDateFormat.format(pref.getLong("date", new Date().getTime())));
@@ -53,20 +61,28 @@ public class SetTimeFragment extends Fragment {
             }
         });
 
-        LinearLayout info = getView().findViewById(R.id.info);
+        LinearLayout info = rootView.findViewById(R.id.info);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment alarmFragment = new SetAlarmFragment();
-                getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
+                activity.replaceFragment(alarmFragment, false);
             }
         });
 
-        setDateActivity.alarmButton.setOnClickListener(new View.OnClickListener() {
+        alarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment alarmFragment = new SetAlarmFragment();
-                getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
+                activity.replaceFragment(alarmFragment, false);
+            }
+        });
+
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new TrainingFragment();
+                activity.replaceFragment(fragment, false);
             }
         });
     }
