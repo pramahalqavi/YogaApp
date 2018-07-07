@@ -220,4 +220,15 @@ bantu melawan artritis dan nyeri sendi.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_atur_jadwal">ATUR JADWAL</string>
     <string name="button_start">MULAI</string>
+
+    <!-- pose gunung di lantai -->
+    <string name="pose_gunung_text">
+        Langkah-langkah:\n
+        1. Berdirilah pada posisi tegak dengan kedua posisi kaki sejajar namun tidak bersentuhan satu kaki dengan kaki lainnya.\n
+        2. Tekan seluruh jari kaki anda pada tikar dan rasakan bagaimana berat tubuh anda tersalurkan pada kaki.\n
+        3. Kencangkan otot paha anda.\n
+        4. Perbesar volume pada tulang rusuk anda dengan menarik nafas perlahan sambil memposisikan kedua bahu kebelakang.\n
+        5. Arahkan mata anda lurus kedepan.\n
+        6.Tarik dan hembuskan nafas perlahan selama 10-15 kali dalam posisi ini.\n
+    </string>
 </resources>
