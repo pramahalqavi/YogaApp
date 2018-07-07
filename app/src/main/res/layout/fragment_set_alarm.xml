@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetAlarmFragment">
+
+    <TextView
+        android:id="@+id/alarm_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alarm_info"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"/>
+    <View
+        android:id="@+id/separator_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/alarm_info"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_below="@id/separator_line"
+        android:orientation="vertical">
+        <TableRow android:id="@+id/row_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView android:id="@+id/izinkan_alarm"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Izinkan alarm"
+                android:layout_weight="1"/>
+            <Switch android:id="@+id/alarm_switch"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:gravity="end"
+                android:layout_weight="0.1"
+                android:textColor="@android:color/darker_gray" />
+        </TableRow>
+        <TableRow android:id="@+id/row_date"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView android:id="@+id/date_label"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Tanggal"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/date_alarm"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="tgl"
+                android:gravity="end"
+                android:layout_weight="0.1"/>
+        </TableRow>
+        <TableRow android:id="@+id/row_time"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView android:id="@+id/time_label"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Waktu"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/time_alarm"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="jam"
+                android:gravity="end"
+                android:layout_weight="0.1"/>
+        </TableRow>
+    </LinearLayout>
+
+</RelativeLayout>
