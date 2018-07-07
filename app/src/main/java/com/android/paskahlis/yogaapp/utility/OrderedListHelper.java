@@ -4,6 +4,8 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.paskahlis.yogaapp.R;
+
 public class OrderedListHelper {
     private Context context;
 
@@ -16,6 +18,7 @@ public class OrderedListHelper {
         TextView numText = new TextView(context);
         numText.setText(num + ".");
         numText.setWidth(getDp(20));
+        numText.setTextColor(context.getResources().getColor(R.color.colorTitleTextToolbarTraining));
 
         TextView stepText = new TextView(context);
         stepText.setText(string);
@@ -24,6 +27,7 @@ public class OrderedListHelper {
         p.weight = 1;
         stepText.setLayoutParams(p);
         stepText.setText(string);
+        stepText.setTextColor(context.getResources().getColor(R.color.colorTitleTextToolbarTraining));
 
         stepRowContainer.addView(numText);
         stepRowContainer.addView(stepText);

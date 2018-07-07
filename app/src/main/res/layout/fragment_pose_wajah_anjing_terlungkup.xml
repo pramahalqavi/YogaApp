@@ -49,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="2pt"
+                android:textColor="@color/colorTitleTextToolbarTraining"
                 android:layout_marginBottom="10dp"
                 android:text="Langkah-langkah:" />
         </LinearLayout>

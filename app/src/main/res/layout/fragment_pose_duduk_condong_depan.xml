@@ -46,6 +46,7 @@
             android:padding="16dp">
 
             <TextView
+                android:textColor="@color/colorTitleTextToolbarTraining"
                 android:id="@+id/tutorial_step_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
