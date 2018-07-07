@@ -9,21 +9,33 @@
         <!--android:endYear="2100"-->
         <!--android:startYear="1900">-->
     <!--</DatePicker>-->
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/action_bar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="?android:actionBarSize"
         android:background="@color/colorPrimary">
         <TableRow android:layout_height="match_parent"
             android:layout_width="match_parent">
             <ImageView android:id="@+id/back_button"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_margin="12dp"
-                android:src="@drawable/baseline_arrow_back_ios_white_18dp"
-                android:layout_gravity="left|center_vertical"/>
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/baseline_arrow_back_ios_white_24dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="1"/>
+            <View android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="7"
+                android:layout_gravity="center_vertical"/>
+            <ImageView android:id="@+id/alarm_button"
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/baseline_notifications_white_24dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_weight="1"/>
         </TableRow>
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <FrameLayout
