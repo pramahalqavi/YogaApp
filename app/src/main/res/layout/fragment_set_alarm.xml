@@ -3,73 +3,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SetAlarmFragment">
+    tools:context=".fragment.history.schedule.SetAlarmFragment">
+
+    <Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_arrow_back_ios_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atur Waktu"
+            android:textColor="@color/white"
+            android:textSize="10pt" />
+
+        <ImageView
+            android:id="@+id/alarm_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_notifications_white_24dp" />
+
+    </Toolbar>
 
     <TextView
         android:id="@+id/alarm_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/alarm_info"
+        android:layout_below="@+id/tool_bar"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:text="@string/alarm_info" />
+
     <View
         android:id="@+id/separator_line"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@android:color/darker_gray"
         android:layout_below="@id/alarm_info"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="15dp"/>
+        android:layout_marginVertical="15dp"
+        android:background="@android:color/darker_gray" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
         android:layout_below="@id/separator_line"
+        android:layout_marginHorizontal="30dp"
         android:orientation="vertical">
-        <TableRow android:id="@+id/row_alarm"
+
+        <TableRow
+            android:id="@+id/row_alarm"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <TextView android:id="@+id/izinkan_alarm"
-                android:layout_height="wrap_content"
+
+            <TextView
+                android:id="@+id/izinkan_alarm"
                 android:layout_width="wrap_content"
-                android:text="Izinkan alarm"
-                android:layout_weight="1"/>
-            <Switch android:id="@+id/alarm_switch"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Izinkan alarm" />
+
+            <Switch
+                android:id="@+id/alarm_switch"
                 android:layout_width="30dp"
-                android:gravity="end"
+                android:layout_height="50dp"
                 android:layout_weight="0.1"
+                android:gravity="end"
                 android:textColor="@android:color/darker_gray" />
         </TableRow>
-        <TableRow android:id="@+id/row_date"
+
+        <TableRow
+            android:id="@+id/row_date"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <TextView android:id="@+id/date_label"
-                android:layout_height="wrap_content"
+
+            <TextView
+                android:id="@+id/date_label"
                 android:layout_width="wrap_content"
-                android:text="Tanggal"
-                android:layout_weight="1"/>
-            <TextView android:id="@+id/date_alarm"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tanggal" />
+
+            <TextView
+                android:id="@+id/date_alarm"
                 android:layout_width="wrap_content"
-                android:text="tgl"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
                 android:gravity="end"
-                android:layout_weight="0.1"/>
+                android:text="tgl" />
         </TableRow>
-        <TableRow android:id="@+id/row_time"
+
+        <TableRow
+            android:id="@+id/row_time"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-            <TextView android:id="@+id/time_label"
-                android:layout_height="wrap_content"
+
+            <TextView
+                android:id="@+id/time_label"
                 android:layout_width="wrap_content"
-                android:text="Waktu"
-                android:layout_weight="1"/>
-            <TextView android:id="@+id/time_alarm"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Waktu" />
+
+            <TextView
+                android:id="@+id/time_alarm"
                 android:layout_width="wrap_content"
-                android:text="jam"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
                 android:gravity="end"
-                android:layout_weight="0.1"/>
+                android:text="jam" />
         </TableRow>
     </LinearLayout>
 

@@ -1,6 +1,5 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.android.paskahlis.yogaapp.R;
-import com.android.paskahlis.yogaapp.activity.SetDateActivity;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.android.paskahlis.yogaapp.fragment.history.schedule.SetDateFragment;
 
 /**
  * Created by Prama LH on 07-May-18.
@@ -18,16 +18,18 @@ import com.android.paskahlis.yogaapp.activity.SetDateActivity;
 
 public class HistoryFragment extends Fragment {
     private Button addSchedule;
+    private MenuActivity activity;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        activity = (MenuActivity) getActivity();
+
         addSchedule = (Button) getView().findViewById(R.id.button_add_schedule);
         addSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SetDateActivity.class);
-                startActivity(intent);
+                activity.replaceFragment(new SetDateFragment(), false);
             }
         });
     }

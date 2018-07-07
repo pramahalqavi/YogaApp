@@ -2,14 +2,11 @@ package com.android.paskahlis.yogaapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
-import com.android.paskahlis.yogaapp.fragment.SetDateFragment;
+import com.android.paskahlis.yogaapp.fragment.history.schedule.SetDateFragment;
 
 public class SetDateActivity extends AppCompatActivity {
 

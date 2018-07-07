@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorListItem">
+    android:background="@drawable/training_item_background">
 
     <TextView
         android:id="@+id/training_title_text_view"
@@ -10,8 +10,12 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:padding="20dp"
+        android:shadowColor="@color/white"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="10"
         android:text="Example"
-        android:textColor="@color/white"
+        android:textColor="#3ea49a"
         android:textSize="15pt" />
 
 </LinearLayout>
