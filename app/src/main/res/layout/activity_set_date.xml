@@ -24,33 +24,13 @@
                 android:layout_gravity="left|center_vertical"/>
         </TableRow>
     </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/header_calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/skyblue"
-        android:layout_below="@id/action_bar">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tanggal"
-            android:textSize="30sp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/white"/>
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/tulang1"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
+
 
     <FrameLayout
         android:id="@+id/date_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/header_calendar">
+        android:layout_below="@+id/action_bar">
     </FrameLayout>
 
 </RelativeLayout>

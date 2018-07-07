@@ -75,6 +75,8 @@ public class MenuActivity extends AppCompatActivity {
         if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
             mDrawerLayout.closeDrawers();
             return;
+        } else {
+            super.onBackPressed();
         }
     }
 
