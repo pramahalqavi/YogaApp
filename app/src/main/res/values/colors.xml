@@ -2,7 +2,9 @@
 <resources>
     <color name="colorPrimary">#23B692</color>
     <color name="colorPrimaryDark">#14A577</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#215661</color>
+    <color name="authorizationButtonBg">#18b792</color>
+    <color name="darkText">#2f7989</color>
     <color name="white">#FFFFFF</color>
     <color name="light_grey">#D3D3D3</color>
     <color name="lavender">#E9ECEC</color>
