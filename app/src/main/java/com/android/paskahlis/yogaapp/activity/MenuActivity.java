@@ -9,14 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
 import com.android.paskahlis.yogaapp.fragment.ContactsFragment;
 import com.android.paskahlis.yogaapp.fragment.HistoryFragment;
-import com.android.paskahlis.yogaapp.fragment.TrainingFragment;
 import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 
 public class MenuActivity extends AppCompatActivity {
@@ -43,8 +40,7 @@ public class MenuActivity extends AppCompatActivity {
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                         break;
                     case R.id.navigation_history:
-//                        selectedfragment = new HistoryFragment();
-                        selectedfragment = new TrainingFragment();
+                        selectedfragment = new HistoryFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                         break;
                     case R.id.navigation_contact:

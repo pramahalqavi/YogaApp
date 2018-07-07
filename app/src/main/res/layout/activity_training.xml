@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.TrainingFragment">
+    tools:context=".activity.TrainingActivity">
 
     <Toolbar
         android:layout_width="match_parent"
@@ -16,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Latihan"
-            android:textSize="10pt"
             android:textColor="@color/white"
-            />
+            android:textSize="10pt" />
     </Toolbar>
 
     <ListView
         android:id="@+id/training_mode_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.android.paskahlis.yogaapp.utility;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +10,28 @@ import android.widget.TextView;
 import com.android.paskahlis.yogaapp.R;
 
 public class TrainingModeListAdapter extends BaseAdapter {
-    private Context context;
-    private String[] trainingModes;
+    private final String[] TRAINING_MODES = {
+            "POSE GUNUNG DI LANTAI",
+            "POSE GUNUNG TERLENTANG",
+            "POSE POHON TERLENTANG",
+            "POSE KURSI TERLENTANG",
+            "POSE WAJAH TELUNGKUP",
+            "POSE BENTANGAN TANGAN DAN KAKI",
+            "POSE SEGITIGA MEMUTAR",
+            "POSE WAJAH ANJING TELUNGKUP",
+            "POSE TONGKAT",
+            "POSE DUDUK CONDONG KE DEPAN"
+    };
 
-    public TrainingModeListAdapter(Context context, String[] trainingModes) {
+    private Context context;
+
+    public TrainingModeListAdapter(Context context) {
         this.context = context;
-        this.trainingModes = trainingModes;
     }
 
     @Override
     public int getCount() {
-        return trainingModes.length;
+        return TRAINING_MODES.length;
     }
 
     @Override
@@ -39,7 +49,7 @@ public class TrainingModeListAdapter extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(context);
         View row = inflater.inflate(R.layout.training_mode_list_item, viewGroup, false);
         TextView trainingTitle = (TextView) row.findViewById(R.id.training_title_text_view);
-        trainingTitle.setText(trainingModes[i]);
+        trainingTitle.setText(TRAINING_MODES[i]);
         return row;
     }
 }
