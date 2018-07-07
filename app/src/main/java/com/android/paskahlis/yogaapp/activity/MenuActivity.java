@@ -46,8 +46,8 @@ public class MenuActivity extends AppCompatActivity {
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                         break;
                     case R.id.navigation_history:
-                        selectedfragment = new HistoryFragment();
-//                        selectedfragment = new TrainingFragment();
+//                        selectedfragment = new HistoryFragment();
+                        selectedfragment = new TrainingFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                         break;
                     case R.id.navigation_contact:

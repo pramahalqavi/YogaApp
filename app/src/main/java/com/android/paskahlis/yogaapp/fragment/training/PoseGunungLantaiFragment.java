@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.training;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

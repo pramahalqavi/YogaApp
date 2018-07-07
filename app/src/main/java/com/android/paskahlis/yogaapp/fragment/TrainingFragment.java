@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.android.paskahlis.yogaapp.fragment.training.PoseGunungLantaiFragment;
+import com.android.paskahlis.yogaapp.fragment.training.PoseGunungTerlentangFragment;
 import com.android.paskahlis.yogaapp.utility.TrainingModeListAdapter;
 
 public class TrainingFragment extends Fragment {
@@ -28,11 +30,16 @@ public class TrainingFragment extends Fragment {
         trainingModeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Fragment fragment = null;
                 switch (i) {
                     case 0:
-                        Fragment fragment = new PoseGunungLantaiFragment();
-                        activity.replaceFragment(fragment, false);
+                        fragment = new PoseGunungLantaiFragment();
+                        break;
+                    case 1:
+                        fragment = new PoseGunungTerlentangFragment();
+                        break;
                 }
+                activity.replaceFragment(fragment, false);
             }
         });
 
