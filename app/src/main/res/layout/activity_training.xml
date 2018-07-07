@@ -6,24 +6,7 @@
     android:orientation="vertical"
     tools:context=".activity.TrainingActivity">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        tools:targetApi="lollipop">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Latihan"
-            android:textColor="@color/white"
-            android:textSize="10pt" />
-    </Toolbar>
-
-    <ListView
-        android:id="@+id/training_mode_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
