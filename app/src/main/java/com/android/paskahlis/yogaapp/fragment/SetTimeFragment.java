@@ -6,13 +6,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.SetAlarmFragment;
+import com.android.paskahlis.yogaapp.activity.SetDateActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class SetTimeFragment extends Fragment {
@@ -21,6 +27,9 @@ public class SetTimeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TimePicker timePicker = (TimePicker) getView().findViewById(R.id.timepicker);
         timePicker.setIs24HourView(true);
+        final Bundle bundle = new Bundle();
+        final SetDateActivity setDateActivity = (SetDateActivity) getActivity();
+        setDateActivity.alarmButton.setVisibility(View.VISIBLE);
 
         final TextView strDate = getView().findViewById(R.id.text_date);
         final TextView infoDate = getView().findViewById(R.id.date_info);
@@ -32,10 +41,33 @@ public class SetTimeFragment extends Fragment {
         infoDate.setText(infoDateFormat.format(getArguments().getLong("date")));
         infoTime.setText(String.format("%02d:%02d", timePicker.getCurrentHour(), timePicker.getCurrentMinute()));
 
+        bundle.putInt("hour", timePicker.getCurrentHour());
+        bundle.putInt("minute", timePicker.getCurrentMinute());
+        Calendar calendar = Calendar.getInstance();
+        bundle.putLong("date", getArguments().getLong("date"));
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 infoTime.setText(String.format("%02d:%02d", hourOfDay, minute));
+            }
+        });
+
+        LinearLayout info = getView().findViewById(R.id.info);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment alarmFragment = new SetAlarmFragment();
+                alarmFragment.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
+            }
+        });
+
+        setDateActivity.alarmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment alarmFragment = new SetAlarmFragment();
+                alarmFragment.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.date_container, alarmFragment).addToBackStack("AlarmFragment").commit();
             }
         });
     }

@@ -27,6 +27,7 @@
         <activity android:name=".activity.TrainingActivity">
 
         </activity>
+        <activity android:name=".activity.AlarmReceiverActivity"></activity>
     </application>
 
 </manifest>
