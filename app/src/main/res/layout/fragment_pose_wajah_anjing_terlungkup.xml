@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.training.PoseWajahAnjingTerlungkupFragment">
+    tools:context=".fragment.history.training.PoseWajahAnjingTerlungkupFragment">
 
     <Toolbar
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.android.paskahlis.yogaapp.fragment.history.schedule.SetDateFragment;
 
 /**
  * Created by Prama LH on 07-May-18.

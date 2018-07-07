@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history.schedule;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,6 +16,7 @@ import android.widget.TimePicker;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.android.paskahlis.yogaapp.fragment.history.training.TrainingFragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

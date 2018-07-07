@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.training.PoseTongkatFragment">
+    tools:context=".fragment.history.training.PoseTongkatFragment">
 
     <Toolbar
         android:layout_width="match_parent"

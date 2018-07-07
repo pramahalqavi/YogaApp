@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history.schedule;
 
 
 import android.app.AlarmManager;

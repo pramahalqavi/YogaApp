@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment.training;
+package com.android.paskahlis.yogaapp.fragment.history.training;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,14 +10,15 @@ import android.widget.LinearLayout;
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.utility.OrderedListHelper;
 
-public class PosePohonTerlentangFragment extends Fragment {
+public class PoseBentanganTanganKakiFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_pose_pohon_terlentang, container, false);
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_pose_bentangan_tangan_kaki, container, false);
         LinearLayout stepContainer = (LinearLayout) rootView.findViewById(R.id.step_container);
 
-        String[] steps = getResources().getStringArray(R.array.pose_pohon_terlentang);
+        String[] steps = getResources().getStringArray(R.array.pose_bentangan_tangan_kaki);
 
         OrderedListHelper helper = new OrderedListHelper(getActivity());
         for (int idx = 0; idx < steps.length; idx++) {
@@ -26,5 +27,4 @@ public class PosePohonTerlentangFragment extends Fragment {
 
         return rootView;
     }
-
 }

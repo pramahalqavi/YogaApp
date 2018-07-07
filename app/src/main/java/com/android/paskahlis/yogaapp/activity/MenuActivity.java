@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
 import com.android.paskahlis.yogaapp.fragment.ContactsFragment;
-import com.android.paskahlis.yogaapp.fragment.HistoryFragment;
+import com.android.paskahlis.yogaapp.fragment.history.HistoryFragment;
 import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 
 public class MenuActivity extends AppCompatActivity {

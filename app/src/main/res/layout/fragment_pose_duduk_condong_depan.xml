@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.training.PoseDudukCondongDepanFragment">
+    tools:context=".fragment.history.training.PoseDudukCondongDepanFragment">
 
     <Toolbar
         android:layout_width="match_parent"

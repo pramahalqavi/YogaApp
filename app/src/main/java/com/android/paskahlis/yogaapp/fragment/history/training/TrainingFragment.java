@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history.training;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,16 +10,16 @@ import android.widget.ListView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
-import com.android.paskahlis.yogaapp.fragment.training.PoseBentanganTanganKakiFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseDudukCondongDepanFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseGunungLantaiFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseGunungTerlentangFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseKursiTerlentangFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PosePohonTerlentangFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseSegitigaMemutarFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseTongkatFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseWajahAnjingTerlungkupFragment;
-import com.android.paskahlis.yogaapp.fragment.training.PoseWajahTerlungkupFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseBentanganTanganKakiFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseDudukCondongDepanFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseGunungLantaiFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseGunungTerlentangFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseKursiTerlentangFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PosePohonTerlentangFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseSegitigaMemutarFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseTongkatFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseWajahAnjingTerlungkupFragment;
+import com.android.paskahlis.yogaapp.fragment.history.training.PoseWajahTerlungkupFragment;
 import com.android.paskahlis.yogaapp.utility.TrainingModeListAdapter;
 
 public class TrainingFragment extends Fragment {
