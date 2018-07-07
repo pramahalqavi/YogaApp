@@ -9,12 +9,16 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorListItem"
+        android:background="@drawable/training_item_background"
         tools:targetApi="lollipop">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:shadowColor="@color/white"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="10"
             android:text="POSE GUNUNG TERLENTANG"
             android:textColor="@color/colorTitleTextToolbarTraining"
             android:textSize="10pt" />

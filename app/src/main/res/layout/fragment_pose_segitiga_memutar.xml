@@ -9,11 +9,14 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorListItem"
+        android:background="@drawable/training_item_background"
         tools:targetApi="lollipop">
 
         <TextView
             android:layout_width="wrap_content"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="10"
             android:layout_height="wrap_content"
             android:text="POSE SEGITIGA MEMUTAR"
             android:textColor="@color/colorTitleTextToolbarTraining"
