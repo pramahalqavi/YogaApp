@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 import com.android.paskahlis.yogaapp.utility.OrderedListHelper;
+import com.android.paskahlis.yogaapp.utility.TrainingFragmentContollerManager;
 
 public class PoseBentanganTanganKakiFragment extends Fragment {
     @Override
@@ -16,13 +18,17 @@ public class PoseBentanganTanganKakiFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_pose_bentangan_tangan_kaki, container, false);
         LinearLayout stepContainer = (LinearLayout) rootView.findViewById(R.id.step_container);
+        final MenuActivity activity = (MenuActivity) getActivity();
 
         String[] steps = getResources().getStringArray(R.array.pose_bentangan_tangan_kaki);
 
-        OrderedListHelper helper = new OrderedListHelper(getActivity());
+        OrderedListHelper helper = new OrderedListHelper(activity);
         for (int idx = 0; idx < steps.length; idx++) {
             stepContainer.addView(helper.buildRow(idx + 1, steps[idx]));
         }
+
+        TrainingFragmentContollerManager contollerManager = new TrainingFragmentContollerManager(activity, rootView, this);
+        rootView = contollerManager.initController();
 
         return rootView;
     }
