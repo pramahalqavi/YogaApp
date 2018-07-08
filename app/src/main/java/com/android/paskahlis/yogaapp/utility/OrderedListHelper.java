@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
+
 public class OrderedListHelper {
     private Context context;
 
@@ -28,6 +30,9 @@ public class OrderedListHelper {
         stepText.setLayoutParams(p);
         stepText.setText(string);
         stepText.setTextColor(context.getResources().getColor(R.color.colorTitleTextToolbarTraining));
+
+        CalligraphyUtils.applyFontToTextView(context, numText, "fonts/comfortaa-regular.ttf");
+        CalligraphyUtils.applyFontToTextView(context, stepText, "fonts/comfortaa-regular.ttf");
 
         stepRowContainer.addView(numText);
         stepRowContainer.addView(stepText);
