@@ -14,6 +14,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:shadowColor="@color/white"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="10"
