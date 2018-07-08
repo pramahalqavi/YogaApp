@@ -39,4 +39,7 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation project(':calligraphy-2.3.0')
+
+    /* calendar view */
+    implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
 }

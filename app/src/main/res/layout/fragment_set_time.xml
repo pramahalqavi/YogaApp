@@ -68,14 +68,15 @@
     <TimePicker
         android:id="@+id/timepicker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/lavender"
         android:numbersTextColor="@color/colorPrimary"
         android:timePickerMode="spinner">
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_marginTop="81dp"
             android:background="@color/shady_light_grey" />
@@ -129,14 +130,19 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_start"
-        android:layout_width="120dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/button_round"
-        android:text="@string/button_start"
-        android:textColor="@android:color/white" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_round"
+            android:text="@string/button_start"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -44,6 +44,7 @@ public class TrainingFragmentContollerManager {
     private Fragment currentFragment;
     private MenuActivity activity;
     private View view;
+    private ImageView backButton;
     private ImageView previousButton;
     private ImageView nextButton;
     private ImageView playPauseButton;
@@ -101,12 +102,19 @@ public class TrainingFragmentContollerManager {
         nextButton = (ImageView) view.findViewById(R.id.next_button);
         playPauseButton = (ImageView) view.findViewById(R.id.play_pause_button);
         gifTutorial = (GifImageView) view.findViewById(R.id.gif_tutorial);
+        backButton = (ImageView) view.findViewById(R.id.back_button);
     }
 
     public View initController() {
         playPauseButton.setOnClickListener(playPauseButtonListener);
         previousButton.setOnClickListener(previousButtonListener);
         nextButton.setOnClickListener(nextButtonListener);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.onBackPressed();
+            }
+        });
         return view;
     }
 }

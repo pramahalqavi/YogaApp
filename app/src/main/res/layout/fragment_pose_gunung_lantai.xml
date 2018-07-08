@@ -12,6 +12,14 @@
         android:background="@drawable/training_item_background"
         tools:targetApi="lollipop">
 
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/baseline_arrow_back_ios_white_24dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,14 +29,15 @@
             android:shadowRadius="10"
             android:text="POSE GUNUNG DI LANTAI"
             android:textColor="@color/colorTitleTextToolbarTraining"
-            android:textSize="10pt" />
+            android:textSize="8pt" />
     </Toolbar>
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif_tutorial"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="2"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:src="@drawable/pose_gunung_lantai" />
@@ -52,8 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:lineSpacingExtra="2pt"
-                android:textColor="@color/colorTitleTextToolbarTraining"
-                android:text="Langkah-langkah:" />
+                android:text="Langkah-langkah:"
+                android:textColor="@color/colorTitleTextToolbarTraining" />
         </LinearLayout>
     </ScrollView>
 
