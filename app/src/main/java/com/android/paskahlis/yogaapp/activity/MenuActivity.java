@@ -127,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
             mDrawerLayout.closeDrawers();
             return;
         }
-        
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         int count = fragmentManager.getBackStackEntryCount();
         if (count == 0) {
