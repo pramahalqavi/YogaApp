@@ -72,16 +72,20 @@
         android:layout_weight="1"
         android:background="@color/lavender"
         android:numbersTextColor="@color/colorPrimary"
-        android:timePickerMode="spinner">
+        android:timePickerMode="spinner"
+        tools:targetApi="lollipop">
 
-        <View
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="81dp"
-            android:background="@color/shady_light_grey" />
-    </TimePicker>
+            android:gravity="center">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#12000000"/>
+        </RelativeLayout>
+    </TimePicker>
 
     <LinearLayout
         android:id="@+id/info"

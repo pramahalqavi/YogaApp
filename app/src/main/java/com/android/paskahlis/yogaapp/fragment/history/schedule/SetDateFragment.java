@@ -6,21 +6,22 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 
@@ -46,19 +47,17 @@ public class SetDateFragment extends Fragment {
         });
 
         final TextView strDate = getView().findViewById(R.id.text_date);
-        final CalendarView calendarView = getView().findViewById(R.id.calendar);
-        calendarView.setDate(pref.getLong("date", new Date().getTime()));
+        final MaterialCalendarView calendarView = getView().findViewById(R.id.calendar);
+        Date date = new Date(pref.getLong("date", new Date().getTime()));
+        calendarView.setDateSelected(date, true);
         DateFormat dateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
-        strDate.setText(dateFormat.format(calendarView.getDate()));
-        pref.edit().putLong("date", calendarView.getDate()).apply();
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(year, month, dayOfMonth, 0, 0);
-                calendarView.setDate(calendar.getTimeInMillis());
+        strDate.setText(dateFormat.format(calendarView.getSelectedDate().getDate()));
+        pref.edit().putLong("date", calendarView.getSelectedDate().getDate().getTime()).apply();
 
-                switch (month) {
+        calendarView.setOnMonthChangedListener(new OnMonthChangedListener() {
+            @Override
+            public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay calendarDay) {
+                switch (calendarDay.getMonth()) {
                     case 0:
                         kolase.setImageDrawable(getResources().getDrawable(R.drawable.a01));
                         break;
@@ -97,10 +96,21 @@ public class SetDateFragment extends Fragment {
                         break;
                 }
 
-
+                Date selected = calendarDay.getDate();
+                calendarView.setDateSelected(selected, true);
                 DateFormat dateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
-                strDate.setText(dateFormat.format(calendarView.getDate()));
-                pref.edit().putLong("date", calendarView.getDate()).apply();
+                strDate.setText(dateFormat.format(selected));
+                pref.edit().putLong("date", selected.getTime()).apply();
+            }
+        });
+
+        calendarView.setOnDateChangedListener(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(@NonNull MaterialCalendarView materialCalendarView, @NonNull CalendarDay calendarDay, boolean b) {
+                calendarView.setDateSelected(materialCalendarView.getSelectedDate().getDate(), true);
+                DateFormat dateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
+                strDate.setText(dateFormat.format(calendarView.getSelectedDate().getDate()));
+                pref.edit().putLong("date", calendarView.getSelectedDate().getDate().getTime()).apply();
             }
         });
 
