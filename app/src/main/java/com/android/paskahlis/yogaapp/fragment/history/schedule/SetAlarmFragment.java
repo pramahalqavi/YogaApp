@@ -76,7 +76,7 @@ public class SetAlarmFragment extends Fragment {
                     Calendar cal = Calendar.getInstance();
                     long ts = pref.getLong("date", new Date().getTime());
                     ts += pref.getInt("hour", 0) * 60 * 60 * 1000;
-                    ts += pref.getInt("minute", 0) * 60 * 1000;
+                    ts += pref.getInt("minute", 0) * 60 * 1000 - 20 * 1000;
                     cal.setTimeInMillis(ts);
 //                    AlarmManager am = (AlarmManager)getActivity().getSystemService(Activity.ALARM_SERVICE);
                     AlarmManager am = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);

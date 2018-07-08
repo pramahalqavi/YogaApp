@@ -48,7 +48,7 @@ public class MenuActivity extends AppCompatActivity {
                     mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                     if (bottomNav.getSelectedItemId() != R.id.navigation_history) {
                         replaceFragment(selectedfragment, true);
-                    } 
+                    }
                     break;
                 case R.id.navigation_contact:
                     selectedfragment = new ContactsFragment();
