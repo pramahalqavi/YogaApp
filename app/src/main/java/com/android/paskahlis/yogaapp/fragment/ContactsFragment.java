@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 
 /**
  * Created by Prama LH on 07-May-18.
@@ -22,6 +24,7 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        final MenuActivity activity = (MenuActivity) getActivity();
 
         Button send = getView().findViewById(R.id.button_send);
         final EditText saran = getView().findViewById(R.id.contacts_content);
@@ -44,6 +47,13 @@ public class ContactsFragment extends Fragment {
                 } else {
                     Toast.makeText(getContext(), "Input kosong", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        ImageView backButton = (ImageView) getView().findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.bottomNav.setSelectedItemId(R.id.navigation_article);
             }
         });
     }

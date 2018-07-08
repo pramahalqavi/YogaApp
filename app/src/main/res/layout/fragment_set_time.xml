@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Atur Waktu"
+            android:text="Atur Jadwal"
             android:textColor="@color/white"
             android:textSize="10pt" />
 

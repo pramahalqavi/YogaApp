@@ -1,8 +1,10 @@
 package com.android.paskahlis.yogaapp.activity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
@@ -26,8 +28,9 @@ import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 public class MenuActivity extends AppCompatActivity {
     public DrawerLayout mDrawerLayout;
     public NavigationView navigationView;
-    private BottomNavigationView bottomNav;
+    public BottomNavigationView bottomNav;
     private Boolean isBackPressedTwice = false;
+    private Activity activity = this;
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -117,12 +120,24 @@ public class MenuActivity extends AppCompatActivity {
             return;
         }
 
+        int selectedMenu = bottomNav.getSelectedItemId();
+        if (selectedMenu != R.id.navigation_article) {
+            bottomNav.setSelectedItemId(R.id.navigation_article);
+            return;
+        }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         int count = fragmentManager.getBackStackEntryCount();
         if (count == 0) {
             if (!isBackPressedTwice) {
                 Toast.makeText(this, "Tekan sekali lagi untuk keluar.", Toast.LENGTH_SHORT).show();
                 isBackPressedTwice = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        isBackPressedTwice = false;
+                    }
+                }, 3000);
                 return;
             }
             super.onBackPressed();

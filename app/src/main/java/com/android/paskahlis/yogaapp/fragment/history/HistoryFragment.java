@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
@@ -18,6 +19,7 @@ import com.android.paskahlis.yogaapp.fragment.history.schedule.SetDateFragment;
 
 public class HistoryFragment extends Fragment {
     private Button addSchedule;
+    private ImageView backButton;
     private MenuActivity activity;
 
     @Override
@@ -30,6 +32,13 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 activity.replaceFragment(new SetDateFragment(), false);
+            }
+        });
+        backButton = (ImageView) getView().findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.bottomNav.setSelectedItemId(R.id.navigation_article);
             }
         });
     }

@@ -11,6 +11,30 @@
         android:background="@color/colorPrimary"
         tools:targetApi="lollipop">
 
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_arrow_back_ios_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textColor="@color/white"
+            android:textSize="10pt" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_email" />
+
     </Toolbar>
 
     <ScrollView
@@ -31,8 +55,8 @@
                 android:layout_marginTop="60dp"
                 android:backgroundTint="@android:color/darker_gray"
                 android:hint="@string/contacts_content_hint"
-                android:textSize="12sp"
-                android:text=""/>
+                android:text=""
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/contacts_email"
@@ -43,8 +67,8 @@
                 android:layout_marginVertical="10dp"
                 android:backgroundTint="@android:color/darker_gray"
                 android:hint="@string/contacts_email_hint"
-                android:textSize="12sp"
-                android:text=""/>
+                android:text=""
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/contacts_name"
@@ -55,8 +79,8 @@
                 android:layout_marginVertical="10dp"
                 android:backgroundTint="@android:color/darker_gray"
                 android:hint="@string/contacts_name_hint"
-                android:textSize="12sp"
-                android:text=""/>
+                android:text=""
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/button_send"
