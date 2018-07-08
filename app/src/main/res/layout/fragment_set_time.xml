@@ -1,45 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_arrow_back_ios_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atur Waktu"
+            android:textColor="@color/white"
+            android:textSize="10pt" />
+
+        <ImageView
+            android:id="@+id/alarm_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_notifications_white_24dp" />
+
+    </Toolbar>
 
     <RelativeLayout
         android:id="@+id/header_calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/skyblue"
-        android:layout_below="@id/action_bar">
+        android:layout_below="@id/tool_bar"
+        android:background="@color/skyblue">
+
         <TextView
             android:id="@+id/text_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tanggal"
-            android:textSize="30sp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:textColor="@color/white"/>
+            android:text="tanggal"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/tulang1"
-            android:layout_alignParentRight="true" />
+            android:src="@drawable/tulang1" />
     </RelativeLayout>
 
-    <TimePicker android:id="@+id/timepicker"
+    <TimePicker
+        android:id="@+id/timepicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:timePickerMode="spinner"
-        android:layout_below="@id/header_calendar"
         android:background="@color/lavender"
-        android:numbersTextColor="@color/colorPrimary">
+        android:numbersTextColor="@color/colorPrimary"
+        android:timePickerMode="spinner">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_alignParentTop="true"
             android:layout_marginTop="81dp"
-            android:background="@color/shady_light_grey"
-            android:layout_alignParentTop="true"></View>
+            android:background="@color/shady_light_grey" />
     </TimePicker>
 
 
@@ -48,52 +87,56 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/timepicker"
-        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        android:layout_marginHorizontal="20dp">
-        <TableRow android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView android:id="@+id/date_info"
-                android:layout_height="wrap_content"
+
+            <TextView
+                android:id="@+id/date_info"
                 android:layout_width="wrap_content"
-                android:text="tgl"
-                android:layout_weight="1"/>
-            <TextView android:id="@+id/time_info"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="tgl" />
+
+            <TextView
+                android:id="@+id/time_info"
                 android:layout_width="wrap_content"
-                android:text="jam"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.99"
                 android:gravity="end"
-                android:layout_weight="0.99"/>
+                android:text="jam" />
+
             <ImageView
                 android:id="@+id/right_arrow"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:textAlignment="gravity"
-                android:gravity="center"
                 android:layout_weight="0.01"
-                android:src="@drawable/baseline_chevron_right_black_24dp" />
+                android:gravity="center"
+                android:src="@drawable/baseline_chevron_right_black_24dp"
+                android:textAlignment="gravity" />
         </TableRow>
 
-        <View android:id="@+id/date_underline"
+        <View
+            android:id="@+id/date_underline"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/date_info"
-            android:background="@android:color/darker_gray"
-            android:layout_marginTop="1dp" />
+            android:layout_marginTop="1dp"
+            android:background="@android:color/darker_gray" />
 
     </LinearLayout>
-
-
 
     <Button
         android:id="@+id/button_start"
         android:layout_width="120dp"
         android:layout_height="35dp"
-        android:layout_below="@id/info"
-        android:background="@drawable/button_round"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button_round"
         android:text="@string/button_start"
-        android:textColor="@android:color/white"
-        android:layout_centerHorizontal="true"/>
+        android:textColor="@android:color/white" />
 
-</RelativeLayout>
+</LinearLayout>

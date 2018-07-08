@@ -1,4 +1,4 @@
-package com.android.paskahlis.yogaapp.fragment;
+package com.android.paskahlis.yogaapp.fragment.history.schedule;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
-import com.android.paskahlis.yogaapp.activity.SetDateActivity;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,25 +24,22 @@ import java.util.Date;
 
 
 public class SetDateFragment extends Fragment {
+    private MenuActivity activity;
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final SetDateActivity setDateActivity = (SetDateActivity) getActivity();
-        ImageView backButton = setDateActivity.findViewById(R.id.back_button);
+        activity = (MenuActivity) getActivity();
+
+        ImageView backButton = getView().findViewById(R.id.back_button);
         final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setDateActivity.onBackPressed();
-            }
-        });
 
         Button setSchedule = getView().findViewById(R.id.button_set_schedule);
         setSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment timeFragment = new SetTimeFragment();
-                getFragmentManager().beginTransaction().replace(R.id.date_container, timeFragment).addToBackStack("TimeFragment").commit();
+                activity.replaceFragment(timeFragment, false);
             }
         });
 

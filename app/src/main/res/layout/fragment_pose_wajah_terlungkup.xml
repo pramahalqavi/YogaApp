@@ -3,20 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".activity.PoseGunungLantaiActivity">
+    tools:context=".fragment.history.training.PoseWajahTerlungkupFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorListItem"
+        android:background="@drawable/training_item_background"
         tools:targetApi="lollipop">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="POSE GUNUNG DI LANTAI"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="10"
+            android:text="POSE WAJAH TERLUNGKUP"
             android:textColor="@color/colorTitleTextToolbarTraining"
             android:textSize="10pt" />
     </Toolbar>
@@ -27,19 +29,30 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:src="@drawable/pose_gunung_lantai" />
+        android:src="@drawable/pose_wajah_terlungkup" />
 
     <ScrollView
+        android:id="@+id/step_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/step_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingExtra="2pt"
-            android:padding="16dp"
-            android:text="@string/pose_gunung_text" />
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tutorial_step_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="2pt"
+                android:textColor="@color/colorTitleTextToolbarTraining"
+                android:text="Langkah-langkah:" />
+        </LinearLayout>
     </ScrollView>
 
     <LinearLayout

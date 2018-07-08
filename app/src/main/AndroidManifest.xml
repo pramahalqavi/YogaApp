@@ -24,10 +24,6 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegistrationActivity" />
         <activity android:name=".activity.SetDateActivity" />
-        <activity android:name=".activity.PoseGunungLantaiActivity" />
-        <activity android:name=".activity.TrainingActivity">
-
-        </activity>
         <activity android:name=".activity.AlarmReceiverActivity"></activity>
     </application>
 

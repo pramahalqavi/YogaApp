@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.history.training.PoseGunungLantaiFragment">
+    tools:context=".fragment.history.training.PosePohonTerlentangFragment">
 
     <Toolbar
         android:layout_width="match_parent"
@@ -15,11 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:shadowColor="@color/white"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="10"
-            android:text="POSE GUNUNG DI LANTAI"
+            android:text="POSE POHON TERLENTANG"
             android:textColor="@color/colorTitleTextToolbarTraining"
             android:textSize="10pt" />
     </Toolbar>
@@ -30,7 +29,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:src="@drawable/pose_gunung_lantai" />
+        android:src="@drawable/pose_pohon_terlentang" />
 
     <ScrollView
         android:id="@+id/step_scroll_view"
@@ -79,4 +78,5 @@
             android:src="@drawable/ic_chevron_right" />
 
     </LinearLayout>
+
 </LinearLayout>
