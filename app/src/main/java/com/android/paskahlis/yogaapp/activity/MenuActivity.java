@@ -27,6 +27,50 @@ public class MenuActivity extends AppCompatActivity {
     public NavigationView navigationView;
     private BottomNavigationView bottomNav;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedfragment = null;
+            switch (item.getItemId()) {
+                case R.id.navigation_article:
+                    selectedfragment = new ArticlesFragment();
+                    mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                    if (bottomNav.getSelectedItemId() == R.id.navigation_history
+                            && getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                        showDialogSwitchTab(selectedfragment);
+                    } else {
+                        replaceFragment(selectedfragment, true);
+                    }
+                    break;
+                case R.id.navigation_history:
+                    selectedfragment = new HistoryFragment();
+                    mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                    if (bottomNav.getSelectedItemId() != R.id.navigation_history) {
+                        replaceFragment(selectedfragment, true);
+                    } else {
+                        replaceFragment(selectedfragment, false);
+                    }
+                    break;
+                case R.id.navigation_contact:
+                    selectedfragment = new ContactsFragment();
+                    mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                    if (bottomNav.getSelectedItemId() == R.id.navigation_history
+                            && getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                        showDialogSwitchTab(selectedfragment);
+                    } else {
+                        replaceFragment(selectedfragment, true);
+                    }
+                    break;
+                case R.id.navigation_exit:
+                    finish();
+                    System.exit(0);
+                    break;
+            }
+            return true;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,49 +81,7 @@ public class MenuActivity extends AppCompatActivity {
         bottomNav = findViewById(R.id.navigation);
         BottomNavigationViewHelper.removeShiftMode(bottomNav);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new ArticlesFragment()).commit();
-        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedfragment = null;
-                switch (item.getItemId()) {
-                    case R.id.navigation_article:
-                        selectedfragment = new ArticlesFragment();
-                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                        if (bottomNav.getSelectedItemId() == R.id.navigation_history
-                                && getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                            showDialogSwitchTab(selectedfragment);
-                        } else {
-                            replaceFragment(selectedfragment, true);
-                        }
-                        break;
-                    case R.id.navigation_history:
-                        selectedfragment = new HistoryFragment();
-                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                        if (bottomNav.getSelectedItemId() != R.id.navigation_history) {
-                            replaceFragment(selectedfragment, true);
-                        } else {
-                            replaceFragment(selectedfragment, false);
-                        }
-                        break;
-                    case R.id.navigation_contact:
-                        selectedfragment = new ContactsFragment();
-                        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                        if (bottomNav.getSelectedItemId() == R.id.navigation_history
-                                && getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                            showDialogSwitchTab(selectedfragment);
-                        } else {
-                            replaceFragment(selectedfragment, true);
-                        }
-                        break;
-                    case R.id.navigation_exit:
-                        finish();
-                        System.exit(0);
-                        break;
-                }
-                return true;
-            }
-        });
+        bottomNav.setOnNavigationItemSelectedListener(bottomNavListener);
         navigationView = findViewById(R.id.nav_view);
 
     }
@@ -130,16 +132,10 @@ public class MenuActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-//                        bottomNav.setSelectedItemId(R.id.navigation_history);
+                        bottomNav.setOnNavigationItemSelectedListener(null);
+                        bottomNav.setSelectedItemId(R.id.navigation_history);
+                        bottomNav.setOnNavigationItemSelectedListener(bottomNavListener);
                     }
-                })
-                .create();
-        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-//                bottomNav.setSelectedItemId(R.id.navigation_history);
-            }
-        });
-        builder.show();
+                }).setCancelable(false).show();
     }
 }
