@@ -1,6 +1,7 @@
 package com.android.paskahlis.yogaapp.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
 import com.android.paskahlis.yogaapp.fragment.ContactsFragment;
 import com.android.paskahlis.yogaapp.fragment.history.HistoryFragment;
 import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MenuActivity extends AppCompatActivity {
     public DrawerLayout mDrawerLayout;
@@ -89,6 +92,11 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
     public void replaceFragment(Fragment fragment, boolean clearStack) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (clearStack) {
@@ -137,7 +145,7 @@ public class MenuActivity extends AppCompatActivity {
                     public void run() {
                         isBackPressedTwice = false;
                     }
-                }, 3000);
+                }, 2000);
                 return;
             }
             super.onBackPressed();

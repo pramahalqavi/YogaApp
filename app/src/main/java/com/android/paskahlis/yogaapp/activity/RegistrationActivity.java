@@ -1,5 +1,6 @@
 package com.android.paskahlis.yogaapp.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +9,17 @@ import android.widget.EditText;
 
 import com.android.paskahlis.yogaapp.R;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class RegistrationActivity extends AppCompatActivity {
     private EditText nameInput;
     private EditText emailInput;
     private EditText passwordInput;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
