@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,6 +25,7 @@
             android:textSize="18pt" />
 
         <EditText
+            android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -33,10 +33,12 @@
             android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Name"
+            android:inputType="textPersonName"
             android:textColor="#18b792"
             android:textColorHint="#18b792" />
 
         <EditText
+            android:id="@+id/email_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -44,10 +46,12 @@
             android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textColor="#18b792"
             android:textColorHint="#18b792" />
 
         <EditText
+            android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -55,6 +59,7 @@
             android:backgroundTint="#9e9e9e"
             android:gravity="center_horizontal"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="#18b792"
             android:textColorHint="#18b792" />
 
@@ -65,7 +70,8 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/button_edge_curved"
             android:text="DAFTAR"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:onClick="registerButtonOnClick"/>
 
     </LinearLayout>
 

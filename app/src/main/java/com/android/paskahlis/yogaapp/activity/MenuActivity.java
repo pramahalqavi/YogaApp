@@ -15,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.fragment.ArticlesFragment;
@@ -26,6 +27,7 @@ public class MenuActivity extends AppCompatActivity {
     public DrawerLayout mDrawerLayout;
     public NavigationView navigationView;
     private BottomNavigationView bottomNav;
+    private Boolean isBackPressedTwice = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -100,15 +102,19 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        int count = fragmentManager.getBackStackEntryCount();
-
         if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
             mDrawerLayout.closeDrawers();
             return;
         }
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int count = fragmentManager.getBackStackEntryCount();
         if (count == 0) {
+            if (!isBackPressedTwice) {
+                Toast.makeText(this, "Tekan sekali lagi untuk keluar.", Toast.LENGTH_SHORT).show();
+                isBackPressedTwice = true;
+                return;
+            }
             super.onBackPressed();
         } else {
             fragmentManager.popBackStack();

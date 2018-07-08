@@ -21,5 +21,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void masukButtonOnClick(View view) {
         startActivity(new Intent(this, MenuActivity.class));
+        finish();
     }
 }
