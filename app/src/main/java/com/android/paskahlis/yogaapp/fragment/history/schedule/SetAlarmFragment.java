@@ -15,12 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.paskahlis.yogaapp.R;
 import com.android.paskahlis.yogaapp.activity.MenuActivity;
-import com.android.paskahlis.yogaapp.activity.SetDateActivity;
 import com.android.paskahlis.yogaapp.utility.AlarmReceiver;
 
 import java.text.DateFormat;
@@ -104,6 +104,14 @@ public class SetAlarmFragment extends Fragment {
             }
         };
         pref.registerOnSharedPreferenceChangeListener(spChanged);
+
+        ImageView backButton = getView().findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
     }
 
     @Override

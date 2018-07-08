@@ -86,6 +86,14 @@ public class SetTimeFragment extends Fragment {
                 activity.replaceFragment(fragment, false);
             }
         });
+
+        ImageView backButton = getView().findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

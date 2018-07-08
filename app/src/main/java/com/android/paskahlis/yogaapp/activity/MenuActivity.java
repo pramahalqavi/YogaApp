@@ -1,5 +1,6 @@
 package com.android.paskahlis.yogaapp.activity;
 
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -23,6 +25,7 @@ import com.android.paskahlis.yogaapp.utility.BottomNavigationViewHelper;
 public class MenuActivity extends AppCompatActivity {
     public DrawerLayout mDrawerLayout;
     public NavigationView navigationView;
+    private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,7 @@ public class MenuActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
-        BottomNavigationView bottomNav = findViewById(R.id.navigation);
+        bottomNav = findViewById(R.id.navigation);
         BottomNavigationViewHelper.removeShiftMode(bottomNav);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new ArticlesFragment()).commit();
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,24 +46,40 @@ public class MenuActivity extends AppCompatActivity {
                     case R.id.navigation_article:
                         selectedfragment = new ArticlesFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                        if (bottomNav.getSelectedItemId() == R.id.navigation_history
+                                && getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                            showDialogSwitchTab(selectedfragment);
+                        } else {
+                            replaceFragment(selectedfragment, true);
+                        }
                         break;
                     case R.id.navigation_history:
                         selectedfragment = new HistoryFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                        if (bottomNav.getSelectedItemId() != R.id.navigation_history) {
+                            replaceFragment(selectedfragment, true);
+                        } else {
+                            replaceFragment(selectedfragment, false);
+                        }
                         break;
                     case R.id.navigation_contact:
                         selectedfragment = new ContactsFragment();
                         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                        if (bottomNav.getSelectedItemId() == R.id.navigation_history
+                                && getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                            showDialogSwitchTab(selectedfragment);
+                        } else {
+                            replaceFragment(selectedfragment, true);
+                        }
                         break;
                     case R.id.navigation_exit:
                         finish();
+                        System.exit(0);
                         break;
                 }
-                replaceFragment(selectedfragment, true);
                 return true;
             }
         });
-
         navigationView = findViewById(R.id.nav_view);
 
     }
@@ -96,4 +115,31 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
+    public void showDialogSwitchTab(final Fragment fragment) {
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage("Apakah Anda ingin menyelesaikan agenda ini?")
+                .setPositiveButton("Oke", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (fragment.getClass().getSimpleName() == "ArticlesFragment") {
+                            replaceFragment(fragment, true);
+                        } else {
+                            replaceFragment(fragment, true);
+                        }
+                    }
+                })
+                .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+//                        bottomNav.setSelectedItemId(R.id.navigation_history);
+                    }
+                })
+                .create();
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+//                bottomNav.setSelectedItemId(R.id.navigation_history);
+            }
+        });
+        builder.show();
+    }
 }

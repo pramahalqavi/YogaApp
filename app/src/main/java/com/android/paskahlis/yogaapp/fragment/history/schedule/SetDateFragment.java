@@ -31,7 +31,6 @@ public class SetDateFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         activity = (MenuActivity) getActivity();
 
-        ImageView backButton = getView().findViewById(R.id.back_button);
         final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
 
         Button setSchedule = getView().findViewById(R.id.button_set_schedule);
@@ -58,6 +57,14 @@ public class SetDateFragment extends Fragment {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
                 strDate.setText(dateFormat.format(calendarView.getDate()));
                 pref.edit().putLong("date", calendarView.getDate()).apply();
+            }
+        });
+
+        ImageView backButton = getView().findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
             }
         });
     }
