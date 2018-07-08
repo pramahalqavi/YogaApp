@@ -34,6 +34,13 @@ public class HistoryFragment extends Fragment {
                 activity.replaceFragment(new SetDateFragment(), false);
             }
         });
+        ImageView addButton = getView().findViewById(R.id.button_add);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.replaceFragment(new SetDateFragment(), false);
+            }
+        });
         backButton = (ImageView) getView().findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

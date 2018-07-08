@@ -29,6 +29,7 @@
             android:textSize="10pt" />
 
         <ImageView
+            android:id="@+id/button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -42,7 +43,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="75dp"
+        android:layout_below="@id/tool_bar"
         android:gravity="center"
         android:text="@string/history_no_list"
         android:textSize="12sp" />
