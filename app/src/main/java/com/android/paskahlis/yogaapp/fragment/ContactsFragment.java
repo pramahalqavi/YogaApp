@@ -21,34 +21,42 @@ import com.android.paskahlis.yogaapp.activity.MenuActivity;
 
 public class ContactsFragment extends Fragment {
 
+    private EditText saran;
+    private EditText email;
+    private EditText nama;
+    private Handler handler;
+
+    private View.OnClickListener sendClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (!saran.getText().toString().equals("") && !email.getText().toString().equals("")
+                    && !nama.getText().toString().equals("")) {
+                Toast.makeText(getContext(), "Mengirim...", Toast.LENGTH_SHORT).show();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getContext(), "Masukan dan saran telah terkirim", Toast.LENGTH_SHORT).show();
+                    }
+                }, 2000);
+
+            } else {
+                Toast.makeText(getContext(), "Input kosong", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final MenuActivity activity = (MenuActivity) getActivity();
 
         Button send = getView().findViewById(R.id.button_send);
-        final EditText saran = getView().findViewById(R.id.contacts_content);
-        final EditText email = getView().findViewById(R.id.contacts_email);
-        final EditText nama = getView().findViewById(R.id.contacts_name);
-        final Handler handler = new Handler();
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!saran.getText().toString().equals("") && !email.getText().toString().equals("")
-                        && !nama.getText().toString().equals("")) {
-                    Toast.makeText(getContext(), "Mengirim...", Toast.LENGTH_SHORT).show();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getContext(), "Masukan dan saran telah terkirim", Toast.LENGTH_SHORT).show();
-                        }
-                    }, 2000);
+        saran = getView().findViewById(R.id.contacts_content);
+        email = getView().findViewById(R.id.contacts_email);
+        nama = getView().findViewById(R.id.contacts_name);
+        handler = new Handler();
 
-                } else {
-                    Toast.makeText(getContext(), "Input kosong", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        send.setOnClickListener(sendClick);
         ImageView backButton = (ImageView) getView().findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +64,9 @@ public class ContactsFragment extends Fragment {
                 activity.bottomNav.setSelectedItemId(R.id.navigation_article);
             }
         });
+
+        ImageView addButton = getView().findViewById(R.id.button_mail);
+        addButton.setOnClickListener(sendClick);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
