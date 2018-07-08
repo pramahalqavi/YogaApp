@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.android.paskahlis.yogaapp.R;
+import com.android.paskahlis.yogaapp.activity.MenuActivity;
 import com.android.paskahlis.yogaapp.utility.OrderedListHelper;
+import com.android.paskahlis.yogaapp.utility.TrainingFragmentContollerManager;
 
 public class PoseWajahAnjingTerlungkupFragment extends Fragment {
     @Override
@@ -20,11 +22,14 @@ public class PoseWajahAnjingTerlungkupFragment extends Fragment {
 
         String[] steps = getResources().getStringArray(R.array.pose_wajah_anjing_terlungkup);
 
-        OrderedListHelper helper = new OrderedListHelper(getActivity());
+        final MenuActivity activity = (MenuActivity) getActivity();
+
+        OrderedListHelper helper = new OrderedListHelper(activity);
         for (int idx = 0; idx < steps.length; idx++) {
             stepContainer.addView(helper.buildRow(idx + 1, steps[idx]));
         }
-
+        TrainingFragmentContollerManager contollerManager = new TrainingFragmentContollerManager(activity, rootView, this);
+        rootView = contollerManager.initController();
         return rootView;
     }
 }

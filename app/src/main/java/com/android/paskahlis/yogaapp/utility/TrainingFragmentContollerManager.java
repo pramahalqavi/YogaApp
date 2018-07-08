@@ -69,11 +69,20 @@ public class TrainingFragmentContollerManager {
         public void onClick(View view) {
             if (position == 0) {
                 Toast.makeText(activity, "Tidak ada panduan lain sebelum ini", Toast.LENGTH_SHORT).show();
-            } else if (position == fragmentsClassName.size()) {
-                Toast.makeText(activity, "Tidak ada panduan lain setelah ini", Toast.LENGTH_SHORT).show();
-            } else {
-                activity.replaceFragment(FRAGMENTS[position - 1]);
+                return;
             }
+            activity.replaceFragment(FRAGMENTS[position - 1]);
+        }
+    };
+
+    private View.OnClickListener nextButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (position == fragmentsClassName.size() - 1) {
+                Toast.makeText(activity, "Tidak ada panduan lain setelah ini", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            activity.replaceFragment(FRAGMENTS[position + 1]);
         }
     };
 
@@ -97,6 +106,7 @@ public class TrainingFragmentContollerManager {
     public View initController() {
         playPauseButton.setOnClickListener(playPauseButtonListener);
         previousButton.setOnClickListener(previousButtonListener);
+        nextButton.setOnClickListener(nextButtonListener);
         return view;
     }
 }
