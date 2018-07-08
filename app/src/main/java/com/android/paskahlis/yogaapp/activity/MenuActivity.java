@@ -127,16 +127,16 @@ public class MenuActivity extends AppCompatActivity {
             mDrawerLayout.closeDrawers();
             return;
         }
-
-        int selectedMenu = bottomNav.getSelectedItemId();
-        if (selectedMenu != R.id.navigation_article) {
-            bottomNav.setSelectedItemId(R.id.navigation_article);
-            return;
-        }
-
+        
         FragmentManager fragmentManager = getSupportFragmentManager();
         int count = fragmentManager.getBackStackEntryCount();
         if (count == 0) {
+            int selectedMenu = bottomNav.getSelectedItemId();
+            if (selectedMenu != R.id.navigation_article) {
+                bottomNav.setSelectedItemId(R.id.navigation_article);
+                return;
+            }
+
             if (!isBackPressedTwice) {
                 Toast.makeText(this, "Tekan sekali lagi untuk keluar.", Toast.LENGTH_SHORT).show();
                 isBackPressedTwice = true;
