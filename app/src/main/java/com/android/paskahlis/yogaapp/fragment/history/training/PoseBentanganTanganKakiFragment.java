@@ -14,7 +14,6 @@ public class PoseBentanganTanganKakiFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_pose_bentangan_tangan_kaki, container, false);
         LinearLayout stepContainer = (LinearLayout) rootView.findViewById(R.id.step_container);
 
