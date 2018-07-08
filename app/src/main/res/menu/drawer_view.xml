@@ -12,9 +12,12 @@
             android:id="@+id/nav_resiko_skoliosis"
             android:title="RESIKO SKOLIOSIS" />
     </group>
+    <group android:id="@+id/fakta"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_fakta"
             android:title="FAKTA-FAKTA" />
+    </group>
     <group android:id="@+id/tentang_yoga"
         android:checkableBehavior="single">
         <item
@@ -24,6 +27,8 @@
             android:id="@+id/nav_asal_usul"
             android:title="ASAL-USUL" />
     </group>
+    <group android:id="@+id/yoga_bagi"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_yoga_bagi"
             android:title="YOGA BAGI SKOLIOSIS" />
@@ -33,5 +38,6 @@
         <item
             android:id="@+id/nav_nutrisi"
             android:title="NUTRISI" />
+    </group>
 
 </menu>
