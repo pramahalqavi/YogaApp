@@ -5,28 +5,28 @@
     <item
         android:id="@+id/navigation_article"
         android:icon="@mipmap/ic_format_list_bulleted_white_24dp"
-        android:title="Article"
+        android:title="Artikel"
         app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history_white_24dp"
-        android:title="History"
+        android:title="Riwayat"
         app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/navigation_contact"
         android:icon="@drawable/ic_contact_mail_white_24dp"
-        android:title="Contact"
+        android:title="Kontak"
         app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/navigation_exit"
         android:icon="@drawable/ic_clear_white_24dp"
-        android:title="Exit"
+        android:title="Keluar"
         app:showAsAction="ifRoom"
         />
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import java.util.Date;
 
 public class SetDateFragment extends Fragment {
     private MenuActivity activity;
+    private ImageView kolase;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class SetDateFragment extends Fragment {
         activity = (MenuActivity) getActivity();
 
         final SharedPreferences pref = getActivity().getSharedPreferences("YogaApp", Context.MODE_PRIVATE);
+        kolase = getView().findViewById(R.id.kolase);
 
         Button setSchedule = getView().findViewById(R.id.button_set_schedule);
         setSchedule.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +57,47 @@ public class SetDateFragment extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, dayOfMonth, 0, 0);
                 calendarView.setDate(calendar.getTimeInMillis());
+
+                switch (month) {
+                    case 0:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.a01));
+                        break;
+                    case 1:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.cs01));
+                        break;
+                    case 2:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.hvh01));
+                        break;
+                    case 3:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.jhb01));
+                        break;
+                    case 4:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.yyy));
+                        break;
+                    case 5:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.feminim1));
+                        break;
+                    case 6:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.tulang1));
+                        break;
+                    case 7:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.a01));
+                        break;
+                    case 8:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.cs01));
+                        break;
+                    case 9:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.hvh01));
+                        break;
+                    case 10:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.jhb01));
+                        break;
+                    case 11:
+                        kolase.setImageDrawable(getResources().getDrawable(R.drawable.yyy));
+                        break;
+                }
+
+
                 DateFormat dateFormat = new SimpleDateFormat("yyyy\nEEE, dd MMM");
                 strDate.setText(dateFormat.format(calendarView.getDate()));
                 pref.edit().putLong("date", calendarView.getDate()).apply();
@@ -67,6 +111,7 @@ public class SetDateFragment extends Fragment {
                 getFragmentManager().popBackStack();
             }
         });
+
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
